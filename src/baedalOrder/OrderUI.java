@@ -15,6 +15,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 	private static final long serialVersionUID = 1L;
 
 	JPanel panelW, panelWT, panelET, panelE, panelEN, panelEC, panelES, jp1, jp2;
+	JPanel jp333333333333;
 	JButton btnPay, btnPhonePay, btnList, btnMember; // 결제완료 버튼(로그인 페이지로 돌아감)
 	JTextArea area;
 	public OrderUI() {
@@ -43,6 +44,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		btnList = new JButton("주문내역");
 		btnMember = new JButton("배송정보");
 		
+		jp333333333333 = new JPanel();
 		
 		//===============assembly()=====================
 		//panelEC.setPreferredSize(new Dimension(200 ,100)); //jpanel크기 조절
