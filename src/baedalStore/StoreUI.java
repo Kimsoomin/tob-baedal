@@ -20,7 +20,7 @@ public class StoreUI extends JFrame implements ActionListener {
 		StoreUI ui = new StoreUI();
 	}
 	
-	
+		
 	
 	
 	public StoreUI() {
