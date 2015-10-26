@@ -1,5 +1,7 @@
 package baedalStore;
 
-public class StoreUI {
+import javax.swing.JFrame;
+
+public class StoreUI extends JFrame{
 
 }
