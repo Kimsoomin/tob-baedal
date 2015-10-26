@@ -6,5 +6,6 @@ public class JoinUI {
 		System.out.println("연우 임포트");
 		System.out.println("연우 확인");
 		System.out.println("영주 임포트");
+		System.out.println("영주 확인");
 	}
 }
