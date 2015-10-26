@@ -33,16 +33,16 @@ public class StoreUI extends JFrame implements ActionListener {
 		
 		jpNorth = new JPanel();
 	
-		ImageIcon top1ButtonIcon = new ImageIcon("src/OrderUI/image/han/1.png");
-		ImageIcon top2ButtonIcon = new ImageIcon("src/OrderUI/image/han/2.png");
-		ImageIcon top3ButtonIcon = new ImageIcon("src/OrderUI/image/han/3.png");
-		ImageIcon top4ButtonIcon = new ImageIcon("src/OrderUI/image/han/4.png");
+		ImageIcon top1ButtonIcon = new ImageIcon("src/baedalStore/image/han/1.png");
+		ImageIcon top2ButtonIcon = new ImageIcon("src/baedalStore/image/han/2.png");
+		ImageIcon top3ButtonIcon = new ImageIcon("src/baedalStore/image/han/3.png");
+		ImageIcon top4ButtonIcon = new ImageIcon("src/baedalStore/image/han/4.png");
 
 		jpSouth = new JPanel();
-		ImageIcon bot5ButtonIcon = new ImageIcon("src/OrderUI/image/han/5.png");
-		ImageIcon bot6ButtonIcon = new ImageIcon("src/OrderUI/image/han/6.png");
-		ImageIcon bot7ButtonIcon = new ImageIcon("src/OrderUI/image/han/7.png");
-		ImageIcon bot8ButtonIcon = new ImageIcon("src/OrderUI/image/han/8.png");
+		ImageIcon bot5ButtonIcon = new ImageIcon("src/baedalStore/image/han/5.png");
+		ImageIcon bot6ButtonIcon = new ImageIcon("src/baedalStore/image/han/6.png");
+		ImageIcon bot7ButtonIcon = new ImageIcon("src/baedalStore/image/han/7.png");
+		ImageIcon bot8ButtonIcon = new ImageIcon("src/baedalStore/image/han/8.png");
 
 		
 		b1 = new JButton(top1ButtonIcon);
