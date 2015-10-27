@@ -2,18 +2,22 @@ package global;
 
 import java.util.List;
 
+import baedalLogin.LoginVO;
+import baedalMenu.MenuVO;
+
 public abstract class DAO {
-	public int insert (Object o){return 0;};
-	public List searchById (String name, String birth){return null;}
-	public List searchByPass (String id, String birth){return null;}
+	public int insert (Object o){return 0;}{}
+	public List<LoginVO> login(String id, String pass){return null;}
+	public List<LoginVO> searchById (String name, String birth){return null;}
+	public List<LoginVO> searchByPass (String id, String birth){return null;}
 		
-	public List selectCate(){return null;}
+	public Object selectCate(){return null;}
 	
-	public List selectStore(){return null;}
+	public Object selectStore(){return null;}
 	
-	public List selectMenu(){return null;}
+	public Object selectMenu(){return null;}
 	
-	public List selectOrderMember(){return null;}
-	public List selectOrderMenu(){return null;}
+	public Object selectOrderMember(){return null;}
+	public Object selectOrderMenu(){return null;}
 	
 }

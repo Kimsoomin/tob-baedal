@@ -3,13 +3,17 @@ package baedalLogin;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Choice;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -28,90 +32,85 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 	Canvas canvas;
 	BufferStrategy strategy;
 	BufferedImage image;
-	JPanel jp,jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jpb1,jpb2;
-	
-	JLabel lblIdsearch  = new JLabel("ID 찾기");
-	JLabel lblName = new JLabel("이름");
-	JLabel lblBirth = new JLabel("생년월일");
-	JLabel lblPasssearch = new JLabel("PAWD찾기");
-	JLabel lblId = new JLabel("ID");
-	JLabel lblQue = new JLabel("비밀번호찾기 질문");
-	JLabel lblAn = new JLabel("답변");
-	JTextField txtName = new JTextField(10);
-	JTextField txtBirth = new JTextField(10);
-	JTextField txtId = new JTextField(20);
-	JTextField txtQue = new JTextField(30);
-	JTextField txtAn = new JTextField(30);
-	JButton a = new JButton("왼쪽");
-	JButton b = new JButton("오른쪽");
-	
-	
-	//JLabel lblName, lblBirth, lblId, lblQue, lblAn;
-	//JButton btnId, btnName, btnBirth, btnPass, btnQue,btnAn;
-	//JPanel panelNorth,panelCenter,panelSouth;
-	//JTextArea area;
-	//JTextField txtName, txtBirth, txtId, txtQue, txtAn;
-	//JList list;
-	//JTextArea txt;
-	//JButton btn;
+	JPanel jp,jpIdsc,jpName,jpBirth,jpIde,jpPwsc,jpId,jpQue,jpAn,jpPwe;
+	JButton btnIde, btnPwe;
+	JLabel lblIdsc,lblName,lblBirth,lblPwsc,lblId,lblQue,lblAn;
+	JTextField txtName, txtBirth, txtId, txtQue, txtAn;
+	JComboBox combo;
 	
 	public SearchUI() {
-		jpb1 = new JPanel();
-		jpb2 = new JPanel();
-		jp = new JPanel();
-    	jp1 = new JPanel();
-	    jp2 = new JPanel();
-		jp3 = new JPanel();
-		jp4 = new JPanel();
-		jp5 = new JPanel();
-		jp6 = new JPanel();
-		jp7 = new JPanel();
-		jp8 = new JPanel();
-		jp9 = new JPanel();
-		jp10 = new JPanel();
-		
-		//this.add(big1);
-		//this.add(big2);
-		jp.setSize(200,200);
-		
-		jpb1.add(lblName,"West");
-		jp.add(lblIdsearch,"Center");
-		jp.add(lblName,"Center");
-		jp.add(txtName);
-		jp.add(lblBirth,"Center");
-		jp.add(txtBirth);
-		jp.add(lblPasssearch,"Center");
-		jp.add(lblId,"South");
-		jp.add(txtId);
-		jp.add(lblQue,"South");
-		jp.add(txtQue);
-		jp.add(lblAn,"South");
-		jp.add(txtAn);
-		jpb1.add(lblIdsearch);
-		jpb1.add(a);
-		jpb1.add(txtName);
-		jpb1.add(lblBirth);
-		jpb1.add(txtBirth);
-		jpb2.add(lblPasssearch);
-		jpb2.add(b);
-		this.setLayout(new FlowLayout());
-		this.add(jpb1);
-		this.add(jpb2);
-		
-	
-	
-		
 		this.setTitle("배달의기수");
-		
-		
-		this.setBounds(100,50,1400,800);
+		lblName = new JLabel("  이름      ");
+		lblBirth = new JLabel("생년월일");
+		lblId = new JLabel("     ID        ");
+		lblQue = new JLabel("    질문      ");
+		lblAn = new JLabel("   답변      ");
+		txtName = new JTextField(11);
+		txtBirth = new JTextField(11);
+		txtId = new JTextField(11);
+		txtQue = new JTextField(11);
+		txtAn = new JTextField(11);
+		btnIde = new JButton("확인");
+		btnPwe = new JButton("확인");
+		lblIdsc = new JLabel("ID찾기");
+		lblPwsc = new JLabel("PW찾기");
+		jp = new JPanel();
+		jpIdsc = new JPanel();
+		jpName = new JPanel();
+		jpBirth = new JPanel();
+		jpPwsc = new JPanel();
+		jpId = new JPanel();
+		jpQue = new JPanel();
+		jpAn = new JPanel();
+		jpIde = new JPanel();
+		jpPwe = new JPanel();
+		jp.setLayout(new GridLayout(9, 1));//7행 1열
+		combo = new JComboBox();
+		jpIdsc.add(lblIdsc);
+		jpName.add(lblName);
+		jpName.add(txtName);
+		jpBirth.add(lblBirth);
+		jpBirth.add(txtBirth);
+		jpIde.add(btnIde);
+		jpPwsc.add(lblPwsc);
+		jpId.add(lblId);
+		jpId.add(txtId);
+		jpQue.add(lblQue);
+		jpQue.add(combo);
+		combo.addItem("첫 강아지");		
+		combo.addItem("첫 학교");		
+		combo.addItem("첫 사랑");		
+		combo.addItem("태어난곳");		
+		combo.addItem("첫친구");
+		combo.setEditable(true);
+		jpAn.add(lblAn);
+		jpAn.add(txtAn);
+		jpPwe.add(btnPwe);
+		jp.add(jpIdsc);
+		jp.add(jpName);
+		jp.add(jpBirth);
+		jp.add(jpIde);
+		jp.add(jpPwsc);
+		jp.add(jpId);
+		jp.add(jpQue);
+		jp.add(jpAn);
+		jp.add(jpPwe);
+		btnIde.addActionListener(this);
+		btnPwe.addActionListener(this);
+		this.add(jp);
+		this.setBounds(100,50,400,400);
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension frm = this.getSize();
+		int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
+		int ypos = (int) (screen.getHeight()/2-frm.getHeight()/2);
+		this.setLocation(xpos,ypos);
+		this.setResizable(false);
 		this.setVisible(true);
-	}
-	
-	
-	public void inin(){
+		this.setResizable(false);
 		
 	}
+	
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -120,7 +119,7 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

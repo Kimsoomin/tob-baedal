@@ -7,15 +7,16 @@ import global.DAO;
 public class OrderDAO extends DAO{
 
 	@Override
-	public List selectOrderMember() {
+	public Object selectOrderMember() {
 		// TODO Auto-generated method stub
 		return super.selectOrderMember();
 	}
 
 	@Override
-	public List selectOrderMenu() {
+	public Object selectOrderMenu() {
 		// TODO Auto-generated method stub
 		return super.selectOrderMenu();
 	}
+
 
 }

@@ -7,9 +7,11 @@ import global.DAO;
 public class StoreDAO extends DAO{
 
 	@Override
-	public List selectStore() {
+	public Object selectStore() {
 		// TODO Auto-generated method stub
 		return super.selectStore();
 	}
+
+
 	
 }

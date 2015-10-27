@@ -20,9 +20,15 @@ public class LoginVO implements Serializable, SQL{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public String login() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
-	public String selectByID(String s) {
+	public String selectByID(String s, String s2) {
 		// TODO Auto-generated method stub
 		return null;
 	}

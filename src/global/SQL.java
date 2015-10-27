@@ -7,13 +7,13 @@ public interface SQL {
 	 * executeUpdate : DML 중에 테이블의 데이터값이 변형됨
 	 */
 	public String insert();		// 추가
-//	public String update();		// 수정
+	public String login();		// 로그인
 
 	/**
 	 * executeQuery : DML 중에 테이블의 데이터값이 변형되지 않음 
 	 */
-	public String selectByID(String s);		// ID 조회
-	public String selectByPass(String s1, String s2);	// pass 조회
+	public String selectByID(String s1, String s2);		// ID 찾기
+	public String selectByPass(String s1, String s2);	// pass 찾기
 	
 	
 	

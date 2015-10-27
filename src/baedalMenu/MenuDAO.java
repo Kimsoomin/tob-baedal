@@ -7,9 +7,11 @@ import global.DAO;
 public class MenuDAO extends DAO{
 
 	@Override
-	public List selectMenu() {
+	public Object selectMenu() {
 		// TODO Auto-generated method stub
 		return super.selectMenu();
 	}
+
+
 
 }
