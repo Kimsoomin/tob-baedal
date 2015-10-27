@@ -148,10 +148,12 @@ public class JoinUI extends JFrame implements ActionListener {
 		String command = e.getActionCommand();
 		switch (command) {
 		case "중복체크":
-			if (service.checkDupl(txtId.getText())) {
-				JOptionPane.showMessageDialog(this, "중복된 아이디 입니다.");
-			} else {
-				JOptionPane.showMessageDialog(this, "가입 가능한 아이디 입니다.");
+			if (service.checkDupl(txtId.getText())) { // 이미 가입한 아이디랑 입력한 값이 다르다면 ' 그 값을 입력하지 않아도 가입이 가능하댄다'
+				JOptionPane.showMessageDialog(this, "이미 가입한 아이디 입니다.");
+			} else if (service.checkDupl(txtId.getText())) { //!@#!@$!@$!@$!@$!@$
+				JOptionPane.showMessageDialog(this, "아이디를 입력해주세요");
+			}else{
+				JOptionPane.showMessageDialog(this, "사용 [ 가능한 ]아이디 입니다.");
 			}
 			break;
 		case "가입":
@@ -163,6 +165,7 @@ public class JoinUI extends JFrame implements ActionListener {
 			String phone = txtHp.getText();
 			String que = txtQue.getText();
 			String ans = txtAn.getText();
+			service.join(id, pass, name, phone, addr, birth);
 			break;
 		case "취소":
 			this.dispose();  // 
