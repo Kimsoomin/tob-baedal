@@ -14,6 +14,9 @@ public interface SQL {
 	 */
 	public String selectByID(String s);		// ID 조회
 	public String selectByPass(String s1, String s2);	// pass 조회
+	
+	
+	
 	public String selectCate();				// 카테고리 조회
 	public String selectStore();			// 식당 조회
 	public String selectMenu();				// 메뉴 조회
