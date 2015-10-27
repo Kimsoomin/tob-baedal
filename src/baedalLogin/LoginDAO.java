@@ -7,28 +7,41 @@ import global.DAO;
 public class LoginDAO extends DAO{
 
 	@Override
-	public int insert(Object o) {
+	public void login(String id, String pass) {
 		// TODO Auto-generated method stub
-		return super.insert(o);
+		
 	}
 
 	@Override
-	public List<LoginVO> login(String id, String pass) {
+	public void selectCate() {
 		// TODO Auto-generated method stub
-		return super.login(id, pass);
+		
 	}
 
 	@Override
-	public List<LoginVO> searchById(String name, String birth) {
+	public void selectStore() {
 		// TODO Auto-generated method stub
-		return super.searchById(name, birth);
+		
 	}
 
 	@Override
-	public List<LoginVO> searchByPass(String id, String birth) {
+	public void selectMenu() {
 		// TODO Auto-generated method stub
-		return super.searchByPass(id, birth);
+		
 	}
+
+	@Override
+	public void selectOrderMember() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectOrderMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 

@@ -7,15 +7,39 @@ import global.DAO;
 public class OrderDAO extends DAO{
 
 	@Override
-	public Object selectOrderMember() {
+	public void login(String id, String pass) {
 		// TODO Auto-generated method stub
-		return super.selectOrderMember();
+		
 	}
 
 	@Override
-	public Object selectOrderMenu() {
+	public void selectCate() {
 		// TODO Auto-generated method stub
-		return super.selectOrderMenu();
+		
+	}
+
+	@Override
+	public void selectStore() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectOrderMember() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectOrderMenu() {
+		// TODO Auto-generated method stub
+		
 	}
 
 
