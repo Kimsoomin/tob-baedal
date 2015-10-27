@@ -2,6 +2,7 @@ package baedalLogin;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -13,6 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class JoinUI extends JFrame implements ActionListener{
@@ -31,14 +33,14 @@ public class JoinUI extends JFrame implements ActionListener{
    public JoinUI() {
       this.setTitle("배달의기수");
       lbl1 = new JLabel("회원가입");
-      lblId = new JLabel("ID");
-      lblPw = new JLabel("PW");
-      lblName = new JLabel("이름");
+      lblId = new JLabel("ID        ");
+      lblPw = new JLabel("PW        ");
+      lblName = new JLabel("이름      ");
       lblBirth = new JLabel("생년월일");
-      lblAddr = new JLabel("주소");
-      lblHp = new JLabel("핸드폰");
-      lblQue = new JLabel("질문");
-      lblAn = new JLabel("답변");
+      lblAddr = new JLabel("주소      ");
+      lblHp = new JLabel("핸드폰  ");
+      lblQue = new JLabel("질문      ");
+      lblAn = new JLabel("답변      ");
       txtId = new JTextField(11);
       txtPw = new JTextField(11);
       txtName = new JTextField(11);
@@ -104,7 +106,23 @@ public class JoinUI extends JFrame implements ActionListener{
       jp.add(jpAn);
       jp2.add(jpJo);
       jp2.add(jpCn);
-     
+      
+      /*
+      jp.setBackground(Color.WHITE);
+      jp1.setBackground(Color.WHITE);
+      jp2.setBackground(Color.WHITE);
+      jpId.setBackground(Color.WHITE);
+      jpIde.setBackground(Color.WHITE);
+      jpPw.setBackground(Color.WHITE);
+      jpName.setBackground(Color.WHITE);
+      jpBirth.setBackground(Color.WHITE);
+      jpAddr.setBackground(Color.WHITE);
+      jpHp.setBackground(Color.WHITE);
+      jpQue.setBackground(Color.WHITE);
+      jpAn.setBackground(Color.WHITE);
+      jpJo.setBackground(Color.WHITE);
+      jpCn.setBackground(Color.WHITE);
+     */
       btnIde.addActionListener(this);
       btnJo.addActionListener(this);
       btnCn.addActionListener(this);
@@ -115,8 +133,13 @@ public class JoinUI extends JFrame implements ActionListener{
      
      
       this.add(jp);
-     
-      this.setBounds(100,50,400,700);
+      this.setBounds(100,50,400,500);
+      Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension frm = this.getSize();
+		int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
+		int ypos = (int) (screen.getHeight()/2-frm.getHeight()/2);
+		this.setLocation(xpos,ypos);
+		this.setResizable(false);
       this.setVisible(true);
      
      
@@ -128,7 +151,7 @@ public class JoinUI extends JFrame implements ActionListener{
       updateLabel(qs);
       String command = e.getActionCommand();
       switch (command) {
-      case "충복체크":
+      case "중복체크":
         
          break;
       case "가입":

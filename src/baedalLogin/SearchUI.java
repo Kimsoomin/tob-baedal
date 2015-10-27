@@ -3,6 +3,7 @@ package baedalLogin;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Choice;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -104,6 +105,20 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 		int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
 		int ypos = (int) (screen.getHeight()/2-frm.getHeight()/2);
 		this.setLocation(xpos,ypos);
+		/*
+		jp.setBackground(Color.WHITE);
+		jpIdsc.setBackground(Color.WHITE);
+		jpName.setBackground(Color.WHITE);
+		jpBirth.setBackground(Color.WHITE);
+		jpIde.setBackground(Color.WHITE);
+		jpPwsc.setBackground(Color.WHITE);
+		jpId.setBackground(Color.WHITE);
+		jpQue.setBackground(Color.WHITE);
+		jpAn.setBackground(Color.WHITE);
+		jpPwe.setBackground(Color.WHITE);
+		*/
+		
+		
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setResizable(false);
