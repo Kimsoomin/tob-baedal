@@ -18,7 +18,7 @@ import baedalMenu.MenuUI;
 public class StoreUI extends JFrame implements ActionListener {
 	protected JButton b1, b2, b3, b4, b5, b6, b7, b8;
 	protected JPanel jpSouth, jpNorth, jpTop;
-	
+	private String id;
 	public static void main(String[] args) {
 		StoreUI ui = new StoreUI();
 	}
@@ -32,6 +32,7 @@ public class StoreUI extends JFrame implements ActionListener {
 		 * temp[i]= new ImageIcon("src/한식종류/i.png"); }
 		 */
 		
+		/* id = service.getId(); */
 		
 		
 		jpNorth = new JPanel();
@@ -158,6 +159,7 @@ public class StoreUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(b1)) {
+			/* service.setStroe(id,"김밥천국");*/
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
