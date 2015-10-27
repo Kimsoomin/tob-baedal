@@ -3,6 +3,7 @@ package baedalFirst;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,7 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class FisrtUI extends JFrame implements ActionListener,Runnable{
+import baedalStore.StoreUI;
+
+public class FisrtUI extends JFrame implements ActionListener{
 	public static void main(String[] args) {
 		FisrtUI ui = new FisrtUI();
 	}
@@ -64,6 +67,12 @@ public class FisrtUI extends JFrame implements ActionListener,Runnable{
 		this.add(panelCenter, BorderLayout.CENTER);
 		this.add(panelSouth, BorderLayout.SOUTH);
 		this.setBounds(100, 50, 1400, 800);
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension frm = this.getSize();
+		int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
+		int ypos = (int)(screen.getHeight()/2-frm.getHeight()/2);
+		this.setLocation(xpos,ypos);
+		this.setResizable(false);
 		this.setVisible(true);
 		
 	}
@@ -74,34 +83,29 @@ public class FisrtUI extends JFrame implements ActionListener,Runnable{
 		if (temp.equals(btnHan)) {
 			this.getContentPane().removeAll();
 			this.repaint();
-			
+			StoreUI ui = new StoreUI();
 		} else if (temp.equals(btnJoong)) {
 			this.getContentPane().removeAll();
 			this.repaint();
-			
+			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnIl)) {
 			this.getContentPane().removeAll();
 			this.repaint();
-			
+			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnChi)) {
 			this.getContentPane().removeAll();
 			this.repaint();
-			
+			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnPi)) {
 			this.getContentPane().removeAll();
 			this.repaint();
-			
+			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnBo)) {
 			this.getContentPane().removeAll();
 			this.repaint();
 		}
 		
 	
-		
-	}
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
 		
 	}
 

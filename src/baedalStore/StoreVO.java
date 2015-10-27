@@ -43,7 +43,7 @@ public class StoreVO implements Serializable, SQL{
 //	=================메뉴 검색==================
 	@Override
 	public String selectMenu() {
-		// TODO Auto-generated method stub
+		// -----
 		return null;
 	}
 //	===============마지막 주문=================
