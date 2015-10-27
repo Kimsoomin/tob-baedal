@@ -3,7 +3,10 @@ package baedalLogin;
 public class LoginServiceImpl implements LoginService{
 	LoginDAO dao = LoginDAO.getInstance();
 	
-	
+	private static LoginServiceImpl instance = new LoginServiceImpl();
+	public static LoginServiceImpl getInstance() {
+		return instance;
+	}
 	@Override
 	public void join(String id, String pass, String name, String phone, String addr, String birth) {
 		LoginVO vo = new LoginVO(id,pass,name,phone,addr,birth);
