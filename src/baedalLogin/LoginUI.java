@@ -8,13 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 public class LoginUI extends JFrame implements ActionListener{
    Connection con;
    PreparedStatement pstmt;
@@ -89,19 +89,32 @@ public class LoginUI extends JFrame implements ActionListener{
    
    // Event 처리 부분
    public void actionPerformed(ActionEvent ae){
-       if(ae.getSource() == search){
-        dbConnect();
-        try {
-          idSelect();
-  } catch (SQLException e) {
-   e.printStackTrace();
-  }
-       }
-    else if(ae.getSource() == join){      // 회원 등록
-   dbConnect();
-   insertMember();
-         clearFields();         
-  }
+	   switch (ae.getActionCommand()) {
+	   case "회원가입":
+	   	this.dispose(); //지금있는 화면을 날리고
+	   	this.repaint(); // 새화면을 띄운다.
+	   	JoinUI joinUI = new JoinUI();
+	   	break;
+	   case "로그인":
+	   	LoginVO vo = new LoginVO();
+
+	   	this.dispose();
+	   	this.repaint();
+	   	
+	   	/*FisrtUI fisrtUI = new FisrtUI();*/
+	   	break;
+
+
+	   case "ID / PW 찾기":
+	   	this.dispose();
+	   	this.repaint();
+	   	SearchUI searchUI = new SearchUI();
+	   	break;
+
+	   default:
+	   	break;
+	   }
+	   
    }
    public void idSelect() throws SQLException{
     String UsrId = null;
@@ -179,8 +192,8 @@ public class LoginUI extends JFrame implements ActionListener{
          values[ i ] = fields[ i ].getText();
       return values;
    }
-   
-   public static void main(String[] args){
-	   LoginUI con= new LoginUI();
-   }
+public static void main(String[] args) {
+	LoginUI ui = new LoginUI();
+}   
 }
+
