@@ -2,6 +2,7 @@ package baedalFirst;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -63,6 +64,13 @@ public class FisrtUI extends JFrame implements ActionListener{
 		panelNorth.setPreferredSize(new Dimension(200, 100));
 		panelCenter.setPreferredSize(new Dimension(700, 350));
 		panelSouth.setPreferredSize(new Dimension(700, 350));
+		
+		/*
+		panelNorth.setBackground(Color.WHITE);
+		panelCenter.setBackground(Color.WHITE);
+		panelSouth.setBackground(Color.WHITE);
+		*/
+		
 		this.add(panelNorth, BorderLayout.NORTH);
 		this.add(panelCenter, BorderLayout.CENTER);
 		this.add(panelSouth, BorderLayout.SOUTH);
