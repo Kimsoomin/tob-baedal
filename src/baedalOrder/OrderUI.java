@@ -18,6 +18,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 	}
 	private static final long serialVersionUID = 1L;
 
+	OrderDAO dao = new OrderDAO();
 	JPanel panelW, panelWT, panelET, panelE, panelEN, panelEC, panelES, jp1, jp2;
 	JPanel jp333333333333;
 	JButton btnPay, btnPhonePay, btnList, btnMember; // 결제완료 버튼(로그인 페이지로 돌아감)
@@ -78,6 +79,8 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 1400, 800); // 표시위치, 화면크기.
 		
+		
+		
 		/*Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		Dimension frm = this.gi*/
 		this.setVisible(true);
@@ -95,5 +98,6 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }
