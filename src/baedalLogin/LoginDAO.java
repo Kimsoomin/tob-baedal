@@ -6,6 +6,9 @@ import global.DAO;
 
 public class LoginDAO extends DAO{
 
+	
+	
+	
 	@Override
 	public int insert(Object o) {
 		// TODO Auto-generated method stub
