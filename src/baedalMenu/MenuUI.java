@@ -132,35 +132,35 @@ public class MenuUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnget1)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget2)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget3)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget4)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget5)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget6)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget7)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget8)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}

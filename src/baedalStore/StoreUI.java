@@ -158,35 +158,36 @@ public class StoreUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(b1)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b2)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b3)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b4)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b5)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b6)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b7)) {
-			this.getContentPane().removeAll();
+			//service.setMenu("육개장");
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b8)) {
-			this.getContentPane().removeAll();
+			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}
