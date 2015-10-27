@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 public class LoginUI extends JFrame implements ActionListener{
    Connection con;
    PreparedStatement pstmt;
@@ -24,25 +25,30 @@ public class LoginUI extends JFrame implements ActionListener{
    private JTextField fields[];
    private JButton login, join, search;
    private JPanel panelCenter, panelSouth;
-   private int size = 2;
-   
+   private int size = 2; 
    public LoginUI(){
     super("배달의 기수");   
    
       labels = new JLabel[ size ];
       fields = new JTextField[ size ];
       for ( int i = 0; i < labels.length; i++ )
-         labels[ i ] = new JLabel( names[ i ] );
+         labels[ i ] = new JLabel( names[ i ],JLabel.CENTER );
             
       for ( int i = 0; i < fields.length; i++ )
          fields[ i ] = new JTextField();
       panelCenter = new JPanel();
       panelCenter.setLayout( new GridLayout( size, 2 ) );
       for ( int i = 0; i < size; i++ ) {
+    	  
          panelCenter.add( labels[ i ] );
+         
          panelCenter.add( fields[ i ] );
       }
+    
+    //  fields.setHorizontalTextPosition(SwingConstants.CENTER);
       
+   //   labels.setVerticalTextPosition(SwingConstants.TOP);
+	  this.setVisible(true);
       login = new JButton("로그인");
       join = new JButton("회원가입");      
       search = new JButton("ID / PW 찾기");      
@@ -52,9 +58,9 @@ public class LoginUI extends JFrame implements ActionListener{
       panelSouth.add( search );
       add( panelCenter, "Center" );
       add( panelSouth, "South" );     
-      setBounds(300,300,370,250);
-      setVisible(true);
-      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      this.setBounds(300,300,300,150);
+      this.setVisible(true);
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       login.addActionListener(this);
       join.addActionListener(this);
       search.addActionListener(this);
