@@ -1,5 +1,19 @@
+
+--------------------------------------------
+--------- 스키마 생성 및 권한---------------
+sqlplus system/oracle;
+conn sys as sysdba;     // 최상위로 위치 변경
+create user baedal identified by baedal;
+grant connect,resource,dba to baedal;
+exit
+-- sqlplus hanbit/hanbit;     // 스키마와 프로젝트 단위의 접속?
+-- connect
+
 ----------------------------------------------
 --------- 멤버 테이블(1페이지)
+
+drop table member;
+
 create table member(
 userid varchar2(20),
 password varchar2(20), 
@@ -18,6 +32,8 @@ constraint member_pk primary key (userid)
 create sequence food_cate_seq
 start with 1;
 
+drop table food_cate;
+
 create table food_cate(
 food_cate_seq number,
 cate_name varchar2(20),
@@ -32,6 +48,8 @@ constraint food_cate_pk primary key (food_cate_seq)
 -- 식당 테이블(3페이지)
 create sequence store_seq
 start with 1;
+
+drop table store;
 
 create table store(
 store_seq number,
@@ -51,6 +69,8 @@ references food_cate(food_cate_seq)
 create sequence menu_seq
 start with 1;
 
+drop table menu;
+
 create table menu(
 menu_seq number not null,
 food_name number not null,
@@ -67,6 +87,8 @@ constraint menu_pk primary key (menu_seq)
 -- 메뉴 및 가격 테이블(4페이지)
 create sequence store_menu_seq
 start with 1;
+
+drop table store_menu;
 
 create table store_menu(
 store_menu_seq number not null,
