@@ -142,9 +142,9 @@ public class JoinUI extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JComboBox cb = (JComboBox) e.getSource();
+		/*JComboBox cb = (JComboBox) e.getSource();
 		String qs = (String) e.getSource();
-		updateLabel(qs);
+		updateLabel(qs);*/
 		String command = e.getActionCommand();
 		switch (command) {
 		case "중복체크":
@@ -165,7 +165,7 @@ public class JoinUI extends JFrame implements ActionListener {
 			String ans = txtAn.getText();
 			break;
 		case "취소":
-			this.dispose();
+			this.dispose();  // 
 			break;
 		default:
 			break;
