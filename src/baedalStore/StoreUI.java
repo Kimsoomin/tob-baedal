@@ -2,6 +2,7 @@ package baedalStore;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -11,6 +12,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import baedalMenu.MenuUI;
 
 public class StoreUI extends JFrame implements ActionListener {
 	protected JButton b1, b2, b3, b4, b5, b6, b7, b8;
@@ -138,7 +141,13 @@ public class StoreUI extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Display the window.
-		
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension frm = this.getSize();
+		int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
+		int ypos = (int)(screen.getHeight()/2-frm.getHeight()/2);
+		this.setLocation(xpos,ypos);
+		this.setResizable(false);
+
 		this.pack();
 		this.setBounds(100, 50, 1400, 800);
 		this.setTitle("배달의 기수");
@@ -147,36 +156,41 @@ public class StoreUI extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		switch (e.getActionCommand()) {
-		case "able":
-			b1.setEnabled(false);
-			break;
-		case "able2":
-			b2.setEnabled(false);
-			/*b1.setEnabled(true);*/
-			break;
-		case "able3":
-			b3.setEnabled(false);
-			break;
-		case "able4":
-			b4.setEnabled(false);
-			break;
-		case "able5":
-			b5.setEnabled(false);
-			break;
-		case "able6":
-			b6.setEnabled(false);
-			break;
-		case "able7":
-			b7.setEnabled(false);
-			break;
-		case "able8":
-			b8.setEnabled(false);
-			break;
-
-		default:
-			break;
+		JButton temp = (JButton) e.getSource();
+		if (temp.equals(b1)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b2)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b3)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b4)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b5)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b6)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b7)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
+		}else if(temp.equals(b8)) {
+			this.getContentPane().removeAll();
+			this.repaint();
+			MenuUI ui = new MenuUI();
 		}
+		
 	}
 
 	/** Returns an ImageIcon, or null if the path was invalid. *//*

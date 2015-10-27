@@ -31,8 +31,8 @@ public class FirstVO implements Serializable, SQL{
 //	=================카테고리 검색==================
 	@Override
 	public String selectCate() {
-		// TODO Auto-generated method stub
-		return null;
+		String qurey = "select * from food_cate where store_menu = ";
+		return qurey;
 	}
 
 //	=================식당 검색==================
