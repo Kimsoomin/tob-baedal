@@ -5,29 +5,23 @@ import java.util.List;
 import global.DAO;
 
 public class LoginDAO extends DAO{
-
+	
 	@Override
-	public void login(String id, String pass) {
-		// TODO Auto-generated method stub
+	public String login(String id, String pass) {
+		String result= "";
+		return result;
 		
+	}
+	@Override
+	public LoginVO searchById(String name, String birth) {
+		// TODO Auto-generated method stub
+		return super.searchById(name, birth);
 	}
 
 	@Override
-	public void selectCate() {
+	public LoginVO searchByPass(String id, String birth) {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void selectStore() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void selectMenu() {
-		// TODO Auto-generated method stub
-		
+		return super.searchByPass(id, birth);
 	}
 
 	@Override

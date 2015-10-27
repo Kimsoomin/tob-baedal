@@ -6,29 +6,6 @@ import global.DAO;
 
 public class MenuDAO extends DAO{
 
-	@Override
-	public void login(String id, String pass) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void selectCate() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void selectStore() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void selectMenu() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void selectOrderMember() {
