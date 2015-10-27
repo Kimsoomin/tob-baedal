@@ -25,7 +25,7 @@ public class FisrtUI extends JFrame implements ActionListener{
 	JButton btnHan,btnJoong,btnIl,btnChi,btnPi,btnBo;
 	JPanel panelNorth, panelCenter,panelSouth;
 	ImageIcon icon;
-	
+	String poo = "야옹";
 	
 	
 	public FisrtUI() {
@@ -84,11 +84,14 @@ public class FisrtUI extends JFrame implements ActionListener{
 		this.setVisible(true);
 		
 	}
+	
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnHan)) {
+			
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
