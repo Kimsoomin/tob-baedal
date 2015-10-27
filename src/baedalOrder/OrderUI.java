@@ -2,6 +2,7 @@ package baedalOrder;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,6 +13,9 @@ import javax.swing.JTextArea;
 
 public class OrderUI extends JFrame implements ActionListener, Runnable{
 
+	public static void main(String[] args) {
+		OrderUI ui = new OrderUI();
+	}
 	private static final long serialVersionUID = 1L;
 
 	JPanel panelW, panelWT, panelET, panelE, panelEN, panelEC, panelES, jp1, jp2;
@@ -74,6 +78,8 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 1400, 800); // 표시위치, 화면크기.
 		
+		/*Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		Dimension frm = this.gi*/
 		this.setVisible(true);
 	}
 	
