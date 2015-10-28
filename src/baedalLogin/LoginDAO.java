@@ -8,7 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import global.Constants;
 import global.DAO;
+import global.DatabaseFactory;
+import global.Vendor;
 
 public class LoginDAO extends DAO{
 	private Connection con;
@@ -21,6 +24,9 @@ public class LoginDAO extends DAO{
 	private static LoginDAO instance = new LoginDAO();
 	public static LoginDAO getInstance() {
 		return instance;
+	}
+	public LoginDAO() {
+	con = DatabaseFactory.getDatabase(Vendor.ORACLE, Constants.ORACLE_ID, Constants.ORACLE_PASSWORD).getConnection();
 	}
 	
 	//--------------- 회원가입
