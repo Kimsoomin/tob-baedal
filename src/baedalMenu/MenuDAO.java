@@ -21,11 +21,11 @@ public class MenuDAO extends DAO{
 		
 	}
 	
-	public MenuVO selectOrderMenu(String key) {
+	public MenuVO selectOrderMenu(String foodName) {
 		MenuVO menu = new MenuVO();
 		try {
 			stmt = con.createStatement();
-			rs= stmt.executeQuery(menu.selectMenu(key));
+			rs= stmt.executeQuery(menu.selectMenu(foodName));
 			while (rs.next()) {
 				menu.setFoodName(rs.getString("foodName"));
 			}
