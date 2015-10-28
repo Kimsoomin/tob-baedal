@@ -12,13 +12,15 @@ import java.util.List;
 
 import javax.swing.*;
 
-import baedalOrder.OrderUI;
+import baedalFirst.*;
+import baedalLogin.*;
+import baedalOrder.*;
+import baedalStore.*;
 
 public class MenuUI extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		MenuUI ui = new MenuUI();
-
-	}
+		}
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,7 +32,9 @@ public class MenuUI extends JFrame implements ActionListener {
 	JMenuBar bar;
 	BufferedReader in;
 	List<JButton> btns;
-
+	private String id;
+	StoreUI store = new StoreUI();
+	MenuVO vo = new MenuVO();
 	public MenuUI() {
 		init();
 	}
@@ -132,34 +136,42 @@ public class MenuUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnget1)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget2)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget3)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget4)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget5)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget6)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget7)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget8)) {
+			vo.setTemp3(store.getName());
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();

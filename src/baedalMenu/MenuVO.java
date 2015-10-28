@@ -7,8 +7,55 @@ import global.SQL;
 public class MenuVO implements Serializable, SQL{
 	
 	private static final long serialVersionUID = 1L;
+	private String temp3;
+	private String menuSeq;
+	private String foodName;
+	private String profile;
+	
+	
+public String getMenuSeq() {
+		return menuSeq;
+	}
 
-//	================Member====================
+	public String getFoodName() {
+		return foodName;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setMenuSeq(String menuSeq) {
+		this.menuSeq = menuSeq;
+	}
+
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+	
+	
+@Override
+	public String toString() {
+		return "메뉴[menuSeq=" + menuSeq + ", 메뉴명=" + foodName + ", 사진=" + profile
+				+ "]";
+	}
+
+// ===아이디값 받음=====
+
+public String getTemp3() {
+		return temp3;
+	}
+
+	public void setTemp3(String temp3) {
+		this.temp3 = temp3;
+	}
+
+	//	================Member====================
 	@Override
 	public String insert() {
 		// TODO Auto-generated method stub
@@ -48,10 +95,16 @@ public class MenuVO implements Serializable, SQL{
 		return null;
 	}
 //	=================메뉴 검색==================
+	
 	@Override
 	public String selectMenu() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public String selectMenu(String s) {
+		String qurey = "select * from menu where food_name= "+make(s);
+		return qurey;
 	}
 //	===============마지막 주문=================
 	@Override
@@ -71,5 +124,6 @@ public class MenuVO implements Serializable, SQL{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
