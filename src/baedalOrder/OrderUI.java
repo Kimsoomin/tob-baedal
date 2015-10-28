@@ -44,6 +44,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		panelEC = new JPanel();
 		jp1 = new JPanel();
 		jp2 = new JPanel();
+		area = new JTextArea("안녕"+"\n"+"뭘봐");
 		btnPay = new JButton("결제하기");
 		btnPhonePay = new JButton("휴대폰으로 결제하기");
 		btnList = new JButton("주문내역");
@@ -70,6 +71,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		panelET.add(panelEC, "Center");
 		panelET.add(panelES, "South");
 		panelWT.add(btnMember);
+		panelWT.add(area);
 		
 		panelE.add(panelET);
 		panelW.add(panelWT);
