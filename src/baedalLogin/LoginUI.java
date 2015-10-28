@@ -1,4 +1,6 @@
 package baedalLogin;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,13 +10,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+
+import baedalLogin.JoinUI;
+import baedalLogin.LoginUI;
+import baedalLogin.LoginVO;
+import baedalLogin.SearchUI;
 public class LoginUI extends JFrame implements ActionListener{
    Connection con;
    PreparedStatement pstmt;
@@ -25,10 +35,14 @@ public class LoginUI extends JFrame implements ActionListener{
    private JTextField fields[];
    private JButton login, join, search;
    private JPanel panelCenter, panelSouth;
-   private int size = 2;
+   private int size = 2; 
    public LoginUI(){
     super("배달의 기수");   
-   
+	   JMenuBar menubar = new JMenuBar();
+	   JMenu file = new JMenu("            언제,  어디서건,  우리는  배달의 기수");
+	   menubar.add( file);
+	   this.setJMenuBar( menubar);
+    
       labels = new JLabel[ size ];
       fields = new JTextField[ size ];
       for ( int i = 0; i < labels.length; i++ )
@@ -56,14 +70,16 @@ public class LoginUI extends JFrame implements ActionListener{
       panelSouth.add( login );
       panelSouth.add( join);
       panelSouth.add( search );
+      panelSouth.add( search );
       add( panelCenter, "Center" );
       add( panelSouth, "South" );     
-      this.setBounds(300,300,300,150);
-      this.setVisible(true);
-      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      login.addActionListener(this);
+	  login.addActionListener(this);
       join.addActionListener(this);
       search.addActionListener(this);
+	  this.setBounds(300,300,300,150);
+      this.setVisible(true);
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     
 
    }//생성자 end
 
@@ -195,5 +211,6 @@ public class LoginUI extends JFrame implements ActionListener{
 public static void main(String[] args) {
 	LoginUI ui = new LoginUI();
 }   
-}
 
+}
+      

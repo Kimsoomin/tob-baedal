@@ -18,29 +18,38 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+
 
 public class SearchUI extends JFrame implements ActionListener,Runnable{
 
-	public static void main(String[] args) {
-		SearchUI search = new SearchUI();
+	
+		private static final long serialVersionUID = 1L;
 		
+		public static void main(String[] args) {
+			SearchUI search = new SearchUI();
 	}
-	
-	private static final long serialVersionUID = 1L;
-	Canvas canvas;
-	BufferStrategy strategy;
-	BufferedImage image;
-	JPanel jp,jpIdsc,jpName,jpBirth,jpIde,jpPwsc,jpId,jpQue,jpAn,jpPwe;
-	JButton btnIde, btnPwe;
-	JLabel lblIdsc,lblName,lblBirth,lblPwsc,lblId,lblQue,lblAn;
-	JTextField txtName, txtBirth, txtId, txtQue, txtAn;
-	JComboBox combo;
-	
 	public SearchUI() {
-		this.setTitle("배달의기수");
+		Canvas canvas;
+		BufferStrategy strategy;
+		BufferedImage image;
+		JPanel jp,jpIdsc,jpName,jpBirth,jpIde,jpPwsc,jpId,jpQue,jpAn,jpPwe;
+		JButton btnIde, btnPwe;
+		JLabel lblIdsc,lblName,lblBirth,lblPwsc,lblId,lblQue,lblAn;
+		JTextField txtName, txtBirth, txtId, txtQue, txtAn;
+		JComboBox combo;
+	
+		this.setTitle("배달의 기수");
+		
+		   JMenuBar menubar = new JMenuBar();
+		   JMenu file = new JMenu("언제,   어디서건,   배달을   원하는   모든   분들을   위해   배달의   기수는   오늘도   달립니다");
+		   menubar.add( file);
+		   this.setJMenuBar( menubar);
 		lblName = new JLabel("  이름      ");
 		lblBirth = new JLabel("생년월일");
 		lblId = new JLabel("     ID        ");
@@ -119,13 +128,16 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 		*/
 		
 		
-		this.setResizable(false);
+		JLabel statusbar = new JLabel("Copyright by. 배달의 기수");
+		statusbar.setPreferredSize(new Dimension(10, 20));
+		statusbar.setBorder(LineBorder.createBlackLineBorder());
+		this.add(statusbar, BorderLayout.SOUTH); 
+		this.pack();
 		this.setVisible(true);
 		this.setResizable(false);
 		
 	}
-	
-	
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -137,5 +149,5 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 		
 		
 	}
-
+	
 }
