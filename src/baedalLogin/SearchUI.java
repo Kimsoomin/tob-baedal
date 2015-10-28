@@ -47,7 +47,7 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 		this.setTitle("배달의 기수");
 		
 		   JMenuBar menubar = new JMenuBar();
-		   JMenu file = new JMenu("언제,   어디서건,   배달을   원하는   모든   분들을   위해   배달의   기수는   오늘도   달립니다");
+		   JMenu file = new JMenu("언제나,  어디서나,  우리는  배달의 기수");
 		   menubar.add( file);
 		   this.setJMenuBar( menubar);
 		lblName = new JLabel("  이름      ");
@@ -74,7 +74,7 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 		jpAn = new JPanel();
 		jpIde = new JPanel();
 		jpPwe = new JPanel();
-		jp.setLayout(new GridLayout(9, 1));//7행 1열
+		jp.setLayout(new GridLayout(9, 1));
 		combo = new JComboBox();
 		jpIdsc.add(lblIdsc);
 		jpName.add(lblName);
@@ -114,19 +114,6 @@ public class SearchUI extends JFrame implements ActionListener,Runnable{
 		int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
 		int ypos = (int) (screen.getHeight()/2-frm.getHeight()/2);
 		this.setLocation(xpos,ypos);
-		/*
-		jp.setBackground(Color.WHITE);
-		jpIdsc.setBackground(Color.WHITE);
-		jpName.setBackground(Color.WHITE);
-		jpBirth.setBackground(Color.WHITE);
-		jpIde.setBackground(Color.WHITE);
-		jpPwsc.setBackground(Color.WHITE);
-		jpId.setBackground(Color.WHITE);
-		jpQue.setBackground(Color.WHITE);
-		jpAn.setBackground(Color.WHITE);
-		jpPwe.setBackground(Color.WHITE);
-		*/
-		
 		
 		JLabel statusbar = new JLabel("Copyright by. 배달의 기수");
 		statusbar.setPreferredSize(new Dimension(10, 20));

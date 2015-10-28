@@ -34,7 +34,7 @@ public class  JoinUI extends JFrame implements ActionListener{
 	   
 	  
 	   JMenuBar menubar = new JMenuBar();
-	   JMenu file = new JMenu("언제,   어디서건,   배달을   원하는   모든   분들을   위해   배달의   기수는   오늘도   달립니다");
+	   JMenu file = new JMenu("언제나,   어디서나,   배달의   자유를   위해   배달의   기수는   오늘도   달립니다");
 	   menubar.add( file);
 	   this.setJMenuBar( menubar);
 
@@ -53,19 +53,19 @@ public class  JoinUI extends JFrame implements ActionListener{
 	   JTextField hintt=new JTextField();
 	   JTextField answert=new JTextField();
 	   JLabel formlabel= new JLabel("회원가입",JLabel.CENTER);
-	   JLabel formlabel2= new JLabel("취소",JLabel.CENTER);
-	     JButton resulton=new JButton("회원가입");
-	     JButton cn=new JButton("취소");
+	     
+	   JButton resulton=new JButton("회원가입");
+	   JButton cn=new JButton("취소");
 	   
-	     overjpan.setPreferredSize(new Dimension(250,35));
-	     westjpan.setPreferredSize(new Dimension(10,235));
-	     eastjpan.setPreferredSize(new Dimension(10,235));
-	     southjpan.setPreferredSize(new Dimension(250,10));
-	     overjpan.add(formlabel);
-	     this.add(BorderLayout.NORTH,overjpan);
-	     this.add(BorderLayout.WEST,westjpan);
-	     this.add(BorderLayout.EAST,eastjpan);
-	     this.add(BorderLayout.SOUTH,southjpan);
+	    overjpan.setPreferredSize(new Dimension(250,35));
+	    westjpan.setPreferredSize(new Dimension(10,235));
+	    eastjpan.setPreferredSize(new Dimension(10,235));
+	    southjpan.setPreferredSize(new Dimension(250,10));
+	    overjpan.add(formlabel);
+	    this.add(BorderLayout.NORTH,overjpan);
+	    this.add(BorderLayout.WEST,westjpan);
+	    this.add(BorderLayout.EAST,eastjpan);
+	    this.add(BorderLayout.SOUTH,southjpan);
 
 	   JLabel userId= new JLabel("아이디",JLabel.CENTER);
 	   JLabel password=new JLabel("비밀번호",JLabel.CENTER);
@@ -77,14 +77,14 @@ public class  JoinUI extends JFrame implements ActionListener{
 	   JLabel answer=new JLabel("답변",JLabel.CENTER);
 	   JLabel empty=new JLabel();
 	   JLabel empty1=new JLabel();
-	    JLabel empty2=new JLabel();
-	    JLabel empty3=new JLabel();
-	    JLabel empty4=new JLabel();
-	    JLabel empty5=new JLabel();
-	    JLabel empty6=new JLabel();
-	    JLabel empty7=new JLabel();
-	    JLabel empty8=new JLabel();
-	    JLabel empty9=new JLabel();
+	   JLabel empty2=new JLabel();
+	   JLabel empty3=new JLabel();
+	   JLabel empty4=new JLabel();
+	   JLabel empty5=new JLabel();
+	   JLabel empty6=new JLabel();
+	   JLabel empty7=new JLabel();
+	   JLabel empty8=new JLabel();
+	   JLabel empty9=new JLabel();
 	   GridLayout g1=new GridLayout(10,3);
 	   g1.setHgap(5);
 	   g1.setVgap(5);
@@ -140,7 +140,6 @@ public class  JoinUI extends JFrame implements ActionListener{
 
 	   }
 
-	  
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {

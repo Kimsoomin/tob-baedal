@@ -39,7 +39,7 @@ public class LoginUI extends JFrame implements ActionListener{
    public LoginUI(){
     super("배달의 기수");   
 	   JMenuBar menubar = new JMenuBar();
-	   JMenu file = new JMenu("            언제,  어디서건,  우리는  배달의 기수");
+	   JMenu file = new JMenu("            언제나,  어디서나,  우리는  배달의 기수");
 	   menubar.add( file);
 	   this.setJMenuBar( menubar);
     
@@ -58,10 +58,6 @@ public class LoginUI extends JFrame implements ActionListener{
          
          panelCenter.add( fields[ i ] );
       }
-    
-    //  fields.setHorizontalTextPosition(SwingConstants.CENTER);
-      
-   //   labels.setVerticalTextPosition(SwingConstants.TOP);
 	  this.setVisible(true);
       login = new JButton("로그인");
       join = new JButton("회원가입");      
@@ -79,138 +75,135 @@ public class LoginUI extends JFrame implements ActionListener{
 	  this.setBounds(300,300,300,150);
       this.setVisible(true);
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     
+   	  }
 
-   }//생성자 end
-
-   //Database 연결 부분
-   public void dbConnect(){ 
-     try{
-   Class.forName("");
-  }catch(ClassNotFoundException cnfe){
-   cnfe.printStackTrace();
-   System.out.println("드라이버 로딩에 실패");
-  }
-  try{
-   String url = "";
-         String userId = ""; 
-         String userPass = "";          
+   		//Database 연결 부분
+   		public void dbConnect(){ 
+   			try{
+   				Class.forName("");
+   			}catch(ClassNotFoundException cnfe){
+   				cnfe.printStackTrace();
+   				System.out.println("드라이버 로딩에 실패");
+   			}
+   			try{
+   				String url = "";
+   				String userId = ""; 
+   				String userPass = "";          
         
-         con =DriverManager.getConnection(url,userId,userPass);
-  }catch(SQLException e){
-   e.printStackTrace();
-   System.out.println("커넥션 설정에 실패");
-  }
-   }
+   				con =DriverManager.getConnection(url,userId,userPass);
+   			}catch(SQLException e){
+   				e.printStackTrace();
+   				System.out.println("커넥션 설정에 실패");
+   			}
+   		}
    
-   // Event 처리 부분
-   public void actionPerformed(ActionEvent ae){
-	   switch (ae.getActionCommand()) {
-	   case "회원가입":
-	   	this.dispose(); //지금있는 화면을 날리고
-	   	this.repaint(); // 새화면을 띄운다.
-	   	JoinUI joinUI = new JoinUI();
-	   	break;
-	   case "로그인":
-	   	LoginVO vo = new LoginVO();
+   		// Event 처리 부분
+   		public void actionPerformed(ActionEvent ae){
+   			switch (ae.getActionCommand()) {
+   			case "회원가입":
+   				this.dispose(); //지금있는 화면을 날리고
+   				this.repaint(); // 새화면을 띄운다.
+   				JoinUI joinUI = new JoinUI();
+   				break;
+   			case "로그인":
+   				LoginVO vo = new LoginVO();
 
-	   	this.dispose();
-	   	this.repaint();
+   				this.dispose();
+   				this.repaint();
 	   	
-	   	/*FisrtUI fisrtUI = new FisrtUI();*/
-	   	break;
+   				/*FisrtUI fisrtUI = new FisrtUI();*/
+   				break;
 
 
-	   case "ID / PW 찾기":
-	   	this.dispose();
-	   	this.repaint();
-	   	SearchUI searchUI = new SearchUI();
-	   	break;
+   			case "ID / PW 찾기":
+   				this.dispose();
+   				this.repaint();
+   				SearchUI searchUI = new SearchUI();
+   				break;
 
-	   default:
-	   	break;
-	   }
+   			default:
+   				break;
+   			}
 	   
-   }
-   public void idSelect() throws SQLException{
-    String UsrId = null;
-    ResultSet rs = null;
-    int Cnt = 0;
-    UsrId = fields[0].getText();
-    String SQL1 = "SELECT * FROM MEM02 WHERE ID='"+ UsrId +"'";
-    pstmt = con.prepareStatement(SQL1);
-    rs = pstmt.executeQuery();
-    while(rs.next()){
-     Cnt++;
-    }
+   		}
+   		public void idSelect() throws SQLException{
+   			String UsrId = null;
+   			ResultSet rs = null;
+   			int Cnt = 0;
+   			UsrId = fields[0].getText();
+   			String SQL1 = "SELECT * FROM MEM02 WHERE ID='"+ UsrId +"'";
+   			pstmt = con.prepareStatement(SQL1);
+   			rs = pstmt.executeQuery();
+   			while(rs.next()){
+   				Cnt++;
+   			}
     
-    if(Cnt > 0){
-     JOptionPane.showMessageDialog(this,"중복된 아이디가 존재 합니다.");
-    }else{
-     JOptionPane.showMessageDialog(this,"아이디 중복검사가 완료되었습니다.\n중복된 아이디가 없습니다.");
-    }
-   }
+   			if(Cnt > 0){
+   				JOptionPane.showMessageDialog(this,"중복된 아이디가 존재 합니다.");
+   			}else{
+   				JOptionPane.showMessageDialog(this,"아이디 중복검사가 완료되었습니다.\n중복된 아이디가 없습니다.");
+   			}
+   		}
    
-   //회원 가입 처리 부분
-   public void insertMember(){
-       Timestamp reg_date = new Timestamp(System.currentTimeMillis());
-    String data[] = getFieldValues();
-// if(data[0].equals("") || data[1].equals("") || data[2].equals("") || data[3].equals("")){
- if(fields[0].getText().equals("") ||
-    fields[1].getText().equals("") ||
-    fields[2].getText().equals("") ||
-    fields[3].getText().equals("") ){
-    JOptionPane.showMessageDialog(this,"모든 정보를 입력 하세요!");
- }else if(fields[1].getText().equals(fields[2].getText())){
-//  }else if(data[1].equals(data[2])){ //비밀 번호가 일치하면 query문 실행
+   		//회원 가입 처리 부분
+   		public void insertMember(){
+   			Timestamp reg_date = new Timestamp(System.currentTimeMillis());
+   			String data[] = getFieldValues();
+   			// if(data[0].equals("") || data[1].equals("") || data[2].equals("") || data[3].equals("")){
+   			if(fields[0].getText().equals("") ||
+   					fields[1].getText().equals("") ||
+   					fields[2].getText().equals("") ||
+   					fields[3].getText().equals("") ){
+   				JOptionPane.showMessageDialog(this,"모든 정보를 입력 하세요!");
+   			}else if(fields[1].getText().equals(fields[2].getText())){
+   				//  }else if(data[1].equals(data[2])){ //비밀 번호가 일치하면 query문 실행
     
-    String sql = "insert into mem02 values(?,?,?,?)";
+   				String sql = "insert into mem02 values(?,?,?,?)";
       
-       try{
-    pstmt = con.prepareStatement(sql);
-//          pstmt.setString(1,data[0]);  //아이디
-//          pstmt.setString(2,data[1]);  //비밀번호
-//          pstmt.setString(3,data[3]);  //이름
+   				try{
+   					pstmt = con.prepareStatement(sql);
+   					//          pstmt.setString(1,data[0]);  //아이디
+   					//          pstmt.setString(2,data[1]);  //비밀번호
+   					//          pstmt.setString(3,data[3]);  //이름
     
-          pstmt.setString(1,fields[0].getText());  //아이디
-          pstmt.setString(2,fields[1].getText());  //비밀번호
-          pstmt.setString(3,fields[3].getText());  //이름
+   					pstmt.setString(1,fields[0].getText());  //아이디
+   					pstmt.setString(2,fields[1].getText());  //비밀번호
+   					pstmt.setString(3,fields[3].getText());  //이름
           
-          pstmt.setTimestamp(4, reg_date); //회원가입 날짜
-    int result = pstmt.executeUpdate();    
-    if(result == 1){
-     JOptionPane.showMessageDialog(this,"회원 가입 완료");
-//     this.dispose();    
-    // MemberManagement management= new MemberManagement();
-    }else{
-     JOptionPane.showMessageDialog(this,"회원 가입 실패");
-    }
+   					pstmt.setTimestamp(4, reg_date); //회원가입 날짜
+   					int result = pstmt.executeUpdate();    
+   					if(result == 1){
+   						JOptionPane.showMessageDialog(this,"회원 가입 완료");
+   						//     this.dispose();    
+   						// MemberManagement management= new MemberManagement();
+   					}else{
+   						JOptionPane.showMessageDialog(this,"회원 가입 실패");
+   					}
     
-       }catch(SQLException e){
-   e.printStackTrace();
-   System.out.println("새로운 레코드 추가에 실패");
-  }
-  }else{ //비밀 번호가 일치하지 않으면 메시지 박스
-  JOptionPane.showMessageDialog(this,"비밀번호가 일치하지 않습니다.");
-  }
-   }  
+   				}catch(SQLException e){
+   					e.printStackTrace();
+   					System.out.println("새로운 레코드 추가에 실패");
+   				}
+   			}else{ //비밀 번호가 일치하지 않으면 메시지 박스
+   				JOptionPane.showMessageDialog(this,"비밀번호가 일치하지 않습니다.");
+   			}
+   		}  
    
-   // 다시 작성 처리 부분
-   public void clearFields(){
-      for( int i = 0; i < size; i++ ){
-         fields[ i ].setText("");
-   }
-   }
-   // 입력한 회원 정보값을 구하는 부분
-   public String[] getFieldValues(){ 
-      String values[] = new String[ size ];
-      for ( int i = 0; i < size; i++ ) 
-         values[ i ] = fields[ i ].getText();
-      return values;
-   }
-public static void main(String[] args) {
-	LoginUI ui = new LoginUI();
-}   
-
+   		// 다시 작성 처리 부분
+   		public void clearFields(){
+   			for( int i = 0; i < size; i++ ){
+   				fields[ i ].setText("");
+   			}
+   		}
+   		// 입력한 회원 정보값을 구하는 부분
+   		public String[] getFieldValues(){ 
+   			String values[] = new String[ size ];
+   			for ( int i = 0; i < size; i++ ) 
+   				values[ i ] = fields[ i ].getText();
+   			return values;
+   		}
+   		public static void main(String[] args) {
+   			LoginUI ui = new LoginUI();
+   		}   
 }
       
