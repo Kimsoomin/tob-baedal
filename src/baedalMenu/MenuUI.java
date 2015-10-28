@@ -137,41 +137,49 @@ public class MenuUI extends JFrame implements ActionListener {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnget1)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget2)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget3)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget4)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget5)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget6)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget7)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget8)) {
 			vo.setTemp3(store.getName());
+			vo.getFoodName();
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();

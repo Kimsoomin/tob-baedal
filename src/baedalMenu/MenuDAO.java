@@ -1,8 +1,6 @@
 package baedalMenu;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import global.DAO;
 
@@ -10,7 +8,6 @@ public class MenuDAO extends DAO{
 	private Connection con;
 	private Statement stmt;
 	private ResultSet rs;
-	private List<MenuVO> list =new ArrayList<MenuVO>(); 
 	private MenuVO menu = new MenuVO();
 	
 	
@@ -23,17 +20,19 @@ public class MenuDAO extends DAO{
 	public void selectOrderMenu() {
 		
 	}
-	public void selectOrderMenu(String key) {
+	
+	public MenuVO selectOrderMenu(String key) {
 		MenuVO menu = new MenuVO();
 		try {
 			stmt = con.createStatement();
 			rs= stmt.executeQuery(menu.selectMenu(key));
+			while (rs.next()) {
+				menu.setFoodName(rs.getString("foodName"));
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+		return menu;
 	}
 
 
