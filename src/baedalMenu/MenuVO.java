@@ -94,7 +94,6 @@ public String getTemp3() {
 
 	@Override
 	public String make(String s) {
-		// TODO Auto-generated method stub
-		return null;
+		return "'"+s+"'";
 	}
 }
