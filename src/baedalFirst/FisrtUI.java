@@ -1,19 +1,12 @@
 package baedalFirst;
 
-import java.awt.BorderLayout;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-import baedalStore.StoreUI;
+import baedalLogin.*;
+import baedalStore.*;
 
 public class FisrtUI extends JFrame implements ActionListener{
 	public static void main(String[] args) {
@@ -25,8 +18,8 @@ public class FisrtUI extends JFrame implements ActionListener{
 	JButton btnHan,btnJoong,btnIl,btnChi,btnPi,btnBo;
 	JPanel panelNorth, panelCenter,panelSouth;
 	ImageIcon icon;
-	String poo = "야옹";
-	
+	LoginVO lo = new LoginVO();
+	FirstVO vo = new FirstVO();
 	
 	public FisrtUI() {
 		init();
@@ -91,27 +84,32 @@ public class FisrtUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnHan)) {
-			
+			vo.setTemp1(lo.getUserid());
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		} else if (temp.equals(btnJoong)) {
+			vo.setTemp1(lo.getUserid());
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnIl)) {
+			vo.setTemp1(lo.getUserid());
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnChi)) {
+			vo.setTemp1(lo.getUserid());
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnPi)) {
+			vo.setTemp1(lo.getUserid());
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnBo)) {
+			vo.setTemp1(lo.getUserid());
 			this.dispose();
 			this.repaint();
 		}

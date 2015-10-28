@@ -1,29 +1,29 @@
 package baedalStore;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.*;
+import java.awt.event.*;
 
-import javax.swing.AbstractButton;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-import baedalMenu.MenuUI;
+import baedalFirst.FisrtUI;
+import baedalLogin.*;
+import baedalMenu.*;
 
 public class StoreUI extends JFrame implements ActionListener {
-	protected JButton b1, b2, b3, b4, b5, b6, b7, b8;
-	protected JPanel jpSouth, jpNorth, jpTop;
-	private String id;
 	public static void main(String[] args) {
 		StoreUI ui = new StoreUI();
 	}
 	
 		
+	private static final long serialVersionUID = 1L;
+	protected JButton b1, b2, b3, b4, b5, b6, b7, b8;
+	protected JPanel jpSouth, jpNorth, jpTop;
+	private String id;
+	FisrtUI first = new FisrtUI();
+	StoreVO vo = new StoreVO();
+	
+	
+	
 	
 	
 	public StoreUI() {
@@ -160,35 +160,43 @@ public class StoreUI extends JFrame implements ActionListener {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(b1)) {
 			/* service.setStroe(id,"김밥천국");*/
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b2)) {
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b3)) {
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b4)) {
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b5)) {
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b6)) {
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b7)) {
+			vo.setTemp(first.getName());
 			//service.setMenu("육개장");
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
 		}else if(temp.equals(b8)) {
+			vo.setTemp(first.getName());
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();

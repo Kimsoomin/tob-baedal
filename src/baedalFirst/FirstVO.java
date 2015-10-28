@@ -7,6 +7,16 @@ import global.SQL;
 public class FirstVO implements Serializable, SQL{
 	
 	private static final long serialVersionUID = 1L;
+	private String temp1;
+	
+
+	public String getTemp1() {
+		return temp1;
+	}
+
+	public void setTemp1(String temp1) {
+		this.temp1 = temp1;
+	}
 
 	//	================Member====================
 	@Override

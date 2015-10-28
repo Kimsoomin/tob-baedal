@@ -5,9 +5,19 @@ import java.io.Serializable;
 import global.SQL;
 
 public class StoreVO implements Serializable, SQL{
-
 	private static final long serialVersionUID = 1L;
-//	================Member====================
+	
+	private String temp;
+	
+	public String getTemp() {
+		return temp;
+	}
+
+	public void setTemp(String temp) {
+		this.temp = temp;
+	}
+
+	//	================Member====================
 	@Override
 	public String insert() {
 		// TODO Auto-generated method stub
