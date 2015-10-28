@@ -8,7 +8,7 @@ public interface LoginService {
 	// 아이디 찾기
 	public LoginVO searchById(String name, String birth);
 	// 비밀번호 찾기
-	public LoginVO searchByPass(String id, String birth, String Phone);
+	public LoginVO searchByPass(String id, String que, String ans, String id2, String que2, String ans2);
 	// 중복 체크
 	public boolean checkDupl(String id);
 	

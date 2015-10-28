@@ -24,7 +24,6 @@ public class LoginServiceImpl implements LoginService{
 		return  dao.searchById(name, birth);
 	}
 
-	@Override
 	public LoginVO searchByPass(String id, String birth, String Phone) {
 		LoginVO vo = new LoginVO();
 		return dao.searchByPass(id, birth);
@@ -35,6 +34,11 @@ public class LoginServiceImpl implements LoginService{
 		
 		
 		return false;
+	}
+	@Override
+	public LoginVO searchByPass(String id, String que, String ans, String id2, String que2, String ans2) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
