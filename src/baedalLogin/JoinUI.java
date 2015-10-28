@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -25,7 +26,7 @@ import javax.swing.border.LineBorder;
 
 
 public class  JoinUI extends JFrame implements ActionListener, ItemListener{
-
+	LoginService service = LoginServiceImpl.getInstance();
 	   private static final long serialVersionUID = 1L;
 
 	JFrame jform=new JFrame();
@@ -159,13 +160,29 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 		String command = e.getActionCommand();
 		switch (command) {
 		case "중복확인":
-			System.exit(0);
+			if (userIdt.getText().isEmpty()) {
+				JOptionPane.showMessageDialog(this, "아이디를 입력해 주세요.");
+			}else if ((service.checkDupl(userIdt.getText()))) { // 이미 가입한 아이디랑 입력한 값이 다르다면 ' 그 값을 입력하지 않아도 가입이 가능하댄다'
+				JOptionPane.showMessageDialog(this, "이미 가입한 아이디 입니다.");
+			}else {
+				JOptionPane.showMessageDialog(this, "사용 [ 가능한 ]아이디 입니다.");
+			}
 			break;
 		case "회원가입":
-			System.exit(0);
+			String id = userIdt.getText();
+			String pass = passwordt.getText();
+			String name = namet.getText();
+			String birth = birtht.getText();
+			String addr = addrt.getText();
+			String phone = phonet.getText();
+			String que = combo.getSelectedItem().toString(); //해야댐
+			String ans = answert.getText();
+			service.join(id, pass, name, phone, addr, birth,que, ans);
 			break;
 		case "취소":
-			System.exit(0);
+			this.dispose();  // 
+			this.repaint();
+			LoginUI ui = new LoginUI();
 			break;
 		default:
 			break;

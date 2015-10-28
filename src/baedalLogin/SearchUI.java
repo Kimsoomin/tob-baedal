@@ -27,7 +27,8 @@ import javax.swing.border.LineBorder;
 
 
 public class SearchUI extends JFrame implements ActionListener,Runnable{
-
+	LoginService service = LoginServiceImpl.getInstance();
+	LoginVO vo = new LoginVO();
 	
 		private static final long serialVersionUID = 1L;
 		
