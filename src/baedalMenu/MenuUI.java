@@ -32,9 +32,13 @@ public class MenuUI extends JFrame implements ActionListener {
 	JMenuBar bar;
 	BufferedReader in;
 	List<JButton> btns;
-	private String id;
+	private String foodName;
 	StoreUI store = new StoreUI();
 	MenuVO vo = new MenuVO();
+	MenuDAO dao = new MenuDAO();
+	
+	
+	
 	public MenuUI() {
 		init();
 	}
@@ -138,51 +142,53 @@ public class MenuUI extends JFrame implements ActionListener {
 		if (temp.equals(btnget1)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
+			dao.selectOrderMenu("떡볶이");
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget2)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
+			dao.selectOrderMenu("까르보나라떡볶이");
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		} else if (temp.equals(btnget3)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
+			dao.selectOrderMenu("순대");
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget4)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
+			dao.selectOrderMenu("돈까스");
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget5)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
+			dao.selectOrderMenu("김치볶음밥");
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget6)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
+			dao.selectOrderMenu("닭발");
 			this.dispose();
 			this.repaint();
 			OrderUI ui = new OrderUI();
 		}else if (temp.equals(btnget7)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
-			this.dispose();
-			this.repaint();
-			OrderUI ui = new OrderUI();
+			JOptionPane.showMessageDialog(null, "메뉴가 없습니다.");
 		}else if (temp.equals(btnget8)) {
 			vo.setTemp3(store.getName());
 			vo.getFoodName();
-			this.dispose();
-			this.repaint();
-			OrderUI ui = new OrderUI();
+			JOptionPane.showMessageDialog(null, "메뉴가 없습니다.");
 		}
 	} 
 }

@@ -11,10 +11,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import baedalMenu.MenuVO;
+
 public class OrderUI extends JFrame implements ActionListener, Runnable{
 
 	public static void main(String[] args) {
 		OrderUI ui = new OrderUI();
+		MenuVO vo = new MenuVO();
+		
 	}
 	private static final long serialVersionUID = 1L;
 
