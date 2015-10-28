@@ -30,6 +30,11 @@ public class LoginUI extends JFrame implements ActionListener{
    PreparedStatement pstmt;
    Timestamp reg_date;
 
+   
+   LoginService service = LoginServiceImpl.getInstance();
+   LoginVO vo = new LoginVO();
+   
+   
    private String names[] = { "아이디", "비밀번호" };
    private JLabel labels[];
    private JTextField fields[];
@@ -102,18 +107,23 @@ public class LoginUI extends JFrame implements ActionListener{
    			switch (ae.getActionCommand()) {
    			case "회원가입":
    				this.dispose(); //지금있는 화면을 날리고
-   				this.repaint(); // 새화면을 띄운다.
-   				JoinUI joinUI = new JoinUI();
+   			   	this.repaint(); // 새화면을 띄운다.
+   			   	JoinUI joinUI = new JoinUI();
    				break;
    			case "로그인":
-   				LoginVO vo = new LoginVO();
-
-   				this.dispose();
-   				this.repaint();
-	   	
-   				/*FisrtUI fisrtUI = new FisrtUI();*/
+   			 System.out.println("UI에서 실행중 =================");
+  		   if (fields[0].getText().isEmpty()||fields[1].getText().isEmpty()) {
+  			   JOptionPane.showMessageDialog(this, "아이디 또는 비밀번호를 다시 입력해 주세요.");
+  		}else if (service.login(fields[0].getText(), fields[1].getText()).equals("로그인 실패")) {
+  			JOptionPane.showMessageDialog(this, "로그인 실패");	
+  		}else{
+  			service.login(fields[0].getText(), fields[1].getText());
+  		   	JOptionPane.showMessageDialog(this, "환영합니다.");	
+  		   
+  		   	this.dispose();
+  		   	this.repaint();
    				break;
-
+  		}
 
    			case "ID / PW 찾기":
    				this.dispose();

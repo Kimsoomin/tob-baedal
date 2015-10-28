@@ -12,7 +12,8 @@ public class LoginVO implements Serializable, SQL{
 	private String phone;		// 전화번호
 	private String addr;		// 주소
 	private String birth;		// 태어난 날짜
-	
+	private String que;				//질문
+	private String ans;				//답
 	
 //	================Member====================
 	
@@ -23,42 +24,57 @@ public class LoginVO implements Serializable, SQL{
 	
 	
 	
-	public LoginVO(String userid, String password, String name, String phone, String addr, String birth) {
+	public LoginVO(String userid, String password, String name, String phone, String addr, String birth, String que , String ans) {
 		this.userid = userid;
 		this.password = password;
 		this.name = name;
 		this.phone = phone;
 		this.addr = addr;
 		this.birth = birth;
+		this.que = que;
+		this.ans = ans;
 	}
 	
 	
-	
+	public String selectAll(){
+		String query = "select * from member";
+		return query;
+	}
 	
 
 	public String insert() {
-		String query = "insert into member " + "(userid, password, name , phone , addr ,birth)" + "values(?,?,?,?,?,?)";
+		String query = "insert into member " + "(userid, password, name , phone , addr ,birth,que,ans)" + "values(?,?,?,?,?,?,?,?)";
 		return query;
 	}
 	
 
 	public String login() {
-		String query = "select * from member where userid = "+make(this.userid);
+		String query = "select * from member where userid = "
+				+make(this.userid)+" and password = "+make(this.password);
 		return query;
 	}
 
 
-	public String selectByID(String s, String s2) {
-		String query = "select * from member where userid ="+this.make(s);
+	public String selectByID(String name, String birth,String findName,String findBirth) {
+		String query = "select * from member where "
+				+ name +"="+ this.make(findName)+"and"+ birth +"="+ this.make(findBirth);
 		return query;
 	}
 
 	
-	public String selectByPass(String s1, String s2) {
-		String query = "";
-		return query;
+	
+	public String selectByPass(String userid, String que, String ans, String userid2, String que2, String ans2) {
+		String query = "select * from member where "
+				+userid+"="+this.make(userid2)+"and"+que+"="+this.make(que2)+"and"+ans+"="+this.make(ans2);
+		return query;  //내일 해야댐
 	}
 
+	
+	public String checkID(String userid){
+		String query = "select * from member where userid ="+make(userid);
+		return query;
+	}
+	
 	@Override
 	public String make(String s) {
 		// TODO Auto-generated method stub
@@ -139,11 +155,38 @@ public class LoginVO implements Serializable, SQL{
 
 
 
+	public String getQue() {
+		return que;
+	}
+
+
+
+	public String getAns() {
+		return ans;
+	}
+
+
+
+	public void setQue(String que) {
+		this.que = que;
+	}
+
+
+
+	public void setAns(String ans) {
+		this.ans = ans;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "로그인 [userid=" + userid + ", password=" + password + ", name=" + name + ", phone=" + phone + ", addr="
-				+ addr + ", birth=" + birth + "]";
+		return "LoginVO [userid=" + userid + ", password=" + password + ", name=" + name + ", phone=" + phone
+				+ ", addr=" + addr + ", birth=" + birth + ", que=" + que + ", ans=" + ans + "]";
 	}
+
+
+
 
 
 
