@@ -32,8 +32,7 @@ public class FirstVO implements Serializable, SQL{
 	
 	@Override
 	public String make(String s) {
-		// TODO Auto-generated method stub
-		return null;
+		return "'"+s+"'";
 	}
 
 	

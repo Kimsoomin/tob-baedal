@@ -2,7 +2,10 @@ package baedalMenu;
 
 import java.sql.*;
 
+import global.Constants;
 import global.DAO;
+import global.DatabaseFactory;
+import global.Vendor;
 
 public class MenuDAO extends DAO{
 	private Connection con;
@@ -10,7 +13,16 @@ public class MenuDAO extends DAO{
 	private ResultSet rs;
 	private MenuVO menu = new MenuVO();
 	
+private static MenuDAO instance = new MenuDAO();
 	
+	public static MenuDAO getInstance(){
+		return instance;
+	}
+	
+	public MenuDAO() {
+		con = DatabaseFactory.getDatabase(Vendor.ORACLE, Constants.ORACLE_ID, 
+				Constants.ORACLE_PASSWORD).getConnection();
+	}
 	@Override
 	public void selectOrderMember() {
 		// TODO Auto-generated method stub
