@@ -25,7 +25,7 @@ public class LoginUI extends JFrame implements ActionListener{
    private JTextField fields[];
    private JButton login, join, search;
    private JPanel panelCenter, panelSouth;
-   private int size = 2; 
+   private int size = 2;
    public LoginUI(){
     super("배달의 기수");   
    

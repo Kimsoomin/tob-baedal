@@ -59,11 +59,11 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		panelEC.add(btnPhonePay);
 		panelES.add(btnPay);
 		
-		panelEN.setPreferredSize(new Dimension(700, 600));
-		panelEC.setPreferredSize(new Dimension(700, 100));
-		panelES.setPreferredSize(new Dimension(700, 100));
+		panelEN.setPreferredSize(new Dimension(200, 400));
+		panelEC.setPreferredSize(new Dimension(200, 100));
+		panelES.setPreferredSize(new Dimension(200, 100));
 		
-		panelW.setPreferredSize(new Dimension(700, 800));
+		panelW.setPreferredSize(new Dimension(200, 600));
 		panelW.setLayout(new BorderLayout());
 		
 		panelET.add(panelEN, "North");
@@ -77,7 +77,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		this.getContentPane().add(panelW, "West");
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setBounds(100, 100, 1400, 800); // 표시위치, 화면크기.
+		this.setBounds(100, 100, 400, 600); // 표시위치, 화면크기.
 		
 		
 		
