@@ -80,49 +80,8 @@ public String getTemp3() {
 		this.tem = tem;
 	}
 
-
-	//	================Member====================
-	@Override
-	public String insert() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public String login() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String selectByID(String s1, String s2) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String selectByPass(String s1, String s2) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-//	=================카테고리 검색==================
-	@Override
-	public String selectCate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-//	=================식당 검색==================
-	@Override
-	public String selectStore() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 //	=================메뉴 검색==================
 	
-	@Override
 	public String selectMenu() {
 		// TODO Auto-generated method stub
 		return null;
@@ -132,24 +91,10 @@ public String getTemp3() {
 		String qurey = "select * from menu where food_name= "+make(s);
 		return qurey;
 	}
-//	===============마지막 주문=================
-	@Override
-	public String selectOrderMember() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String selectOrderMenu() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public String make(String s) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 }
