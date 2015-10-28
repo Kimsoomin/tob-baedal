@@ -10,7 +10,7 @@ public class Constants {
 	 * 벤더(Vendor: 공급업체) 가 제공하는 low-level 의 접속값
 	 */
 	public static final String ORACLE_DRIVER = "oracle.jdbc.driver.OracleDriver";
-	public static final String ORACLE_URL = "jdbc:oracle:thin:@192.168.0.142:1521:xe";
+	public static final String ORACLE_URL = "jdbc:oracle:thin:@192.168.0.142:1521/xe";
 	public static final String ORACLE_ID = "baedal";
 	public static final String ORACLE_PASSWORD = "baedal";
 	public static final String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
