@@ -16,9 +16,9 @@ import javax.swing.JPanel;
 import baedalMenu.MenuUI;
 
 public class StoreUI extends JFrame implements ActionListener {
-	public static void main(String[] args) {
-		StoreUI ui = new StoreUI();
-	}
+//	public static void main(String[] args) {
+//		StoreUI ui = new StoreUI();
+//	}
 	
 		
 	private static final long serialVersionUID = 1L;
@@ -26,20 +26,13 @@ public class StoreUI extends JFrame implements ActionListener {
 	protected JPanel jpSouth, jpNorth, jpTop;
 	private String id;
 	StoreVO vo = new StoreVO();
-	
-	
-	
-	
-	
+
 	public StoreUI() {
-		/*
-		 * ImageIcon[] temp = new ImageIcon[8]; for (int i = 1; i < 9; i++) {
-		 * temp[i]= new ImageIcon("src/한식종류/i.png"); }
-		 */
 		
-		/* id = service.getId(); */
-		
-		
+//		  ImageIcon[] temp = new ImageIcon[8]; for (int i = 1; i < 9; i++) {
+//		  temp[i]= new ImageIcon("src/한식종류/i.png"); }
+//		  id = service.getId(); 
+			
 		jpNorth = new JPanel();
 	
 		ImageIcon top1ButtonIcon = new ImageIcon("src/baedalStore/image/han/1.png");
@@ -131,7 +124,7 @@ public class StoreUI extends JFrame implements ActionListener {
 		 * b3.setToolTipText("Click this button to enable the middle button.");
 		 */
 
-		// Add Components to this container, using the default FlowLayout.
+// 		Add Components to this container, using the default FlowLayout.
 		jpNorth.add(b1);
 		jpNorth.add(b2);
 		jpNorth.add(b3);
@@ -198,12 +191,13 @@ public class StoreUI extends JFrame implements ActionListener {
 			this.dispose();
 			this.repaint();
 			MenuUI ui = new MenuUI();
-		}
-		
+		}		
 	}
+}
 
-	/** Returns an ImageIcon, or null if the path was invalid. *//*
-	protected static ImageIcon createImageIcon(String path) {
+/* 		Returns an ImageIcon, or null if the path was invalid. */
+/*
+		protected static ImageIcon createImageIcon(String path) {
 		java.net.URL imgURL = StoreUI.class.getResource(path);
 		if (imgURL != null) {
 			return new ImageIcon(imgURL);
@@ -211,7 +205,5 @@ public class StoreUI extends JFrame implements ActionListener {
 			System.err.println("파일의 경로가 잘못 되었습니다. : " + path);
 			return null;
 		}
-	}*/
-
-
-}
+	}
+*/

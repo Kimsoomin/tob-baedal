@@ -39,9 +39,9 @@ public class SearchUI extends JFrame implements ActionListener, Runnable, ItemLi
 	JComboBox combo;
 	private static final long serialVersionUID = 1L;
 
-	public static void main(String[] args) {
-		SearchUI search = new SearchUI();
-	}
+//	public static void main(String[] args) {
+//		SearchUI search = new SearchUI();
+//	}
 
 	public SearchUI() {
 

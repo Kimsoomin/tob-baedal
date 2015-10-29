@@ -24,7 +24,7 @@ import javax.swing.border.LineBorder;
 
 public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 	LoginService service = LoginServiceImpl.getInstance();
-	   private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	JFrame jform=new JFrame();
 	JComboBox combo;
@@ -35,14 +35,13 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 	JButton conform,resulton,cn;
 	JMenuBar menubar;
 	JMenu file;
-	public static void main(String[] args) {
-	   JoinUI join = new JoinUI();
-	}
+	
+//	public static void main(String[] args) {
+//	   JoinUI join = new JoinUI();
+//	}
 	
 	
 	public JoinUI() {
-	   
-	  
 	   menubar = new JMenuBar();
 	   file = new JMenu("언제,   어디서건,   배달을   원하는   모든   분들을   위해   배달의   기수는   오늘도   달립니다");
 	   menubar.add(file);
@@ -206,27 +205,27 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 			break;
 		}
 	}
-//	@Override
-//	public void itemStateChanged(ItemEvent e) {
-//		String qs = (String) combo.getSelectedItem();
-//		switch (qs) {
-//		case "첫 강아지":
-//			System.exit(0);
-//			break;
-//		case "첫 학교":
-//			System.exit(0);
-//			break;
-//		case "첫 사랑":
-//			System.exit(0);
-//			break;
-//		case "태어난곳":
-//			System.exit(0);
-//			break;
-//		case "첫친구":
-//			System.exit(0);
-//			break;
-//		default:
-//			break;
+//		@Override
+//		public void itemStateChanged(ItemEvent e) {
+//			String qs = (String) combo.getSelectedItem();
+//			switch (qs) {
+//			case "첫 강아지":
+//				System.exit(0);
+//				break;
+//			case "첫 학교":
+//				System.exit(0);
+//				break;
+//			case "첫 사랑":
+//				System.exit(0);
+//				break;
+//			case "태어난곳":
+//				System.exit(0);
+//				break;
+//			case "첫친구":
+//				System.exit(0);
+//				break;
+//			default:
+//				break;
 //		}
 //	}
 
@@ -236,4 +235,4 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 		// TODO Auto-generated method stub
 		
 	}
-	}
+}

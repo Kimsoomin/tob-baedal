@@ -24,9 +24,9 @@ import baedalOrder.OrderUI;
 import baedalOrder.OrderVO;
 
 public class MenuUI extends JFrame implements ActionListener {
-   public static void main(String[] args) {
-      MenuUI ui = new MenuUI();
-      }
+//   public static void main(String[] args) {
+//      MenuUI ui = new MenuUI();
+//      }
 
    private static final long serialVersionUID = 1L;
 
@@ -42,8 +42,6 @@ public class MenuUI extends JFrame implements ActionListener {
  
    MenuService service = new MenuServiceImpl(); 
    MenuDAO dao = new MenuDAO();
-   
-   
    
    public MenuUI() {
       init();

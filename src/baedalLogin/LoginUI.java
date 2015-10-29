@@ -26,9 +26,11 @@ public class LoginUI extends JFrame implements ActionListener{
    Connection con;
    PreparedStatement pstmt;
    Timestamp reg_date;
-		public static void main(String[] args) {
+		
+   public static void main(String[] args) {
    			LoginUI ui = new LoginUI();
-   		}   
+   		}  
+   
    LoginService service = LoginServiceImpl.getInstance();
    LoginVO vo = new LoginVO();
    
@@ -162,8 +164,9 @@ public class LoginUI extends JFrame implements ActionListener{
    				JOptionPane.showMessageDialog(this,"아이디 중복검사가 완료되었습니다.\n중복된 아이디가 없습니다.");
    			}
    		}
+}
    
-   		//회원 가입 처리 부분
+//			회원 가입 처리 부분
 //   		public void insertMember(){
 //   			Timestamp reg_date = new Timestamp(System.currentTimeMillis());
 //   			String data[] = getFieldValues();
@@ -174,15 +177,15 @@ public class LoginUI extends JFrame implements ActionListener{
 //   					fields[3].getText().equals("") ){
 //   				JOptionPane.showMessageDialog(this,"모든 정보를 입력 하세요!");
 //   			}else if(fields[1].getText().equals(fields[2].getText())){
-//   				//  }else if(data[1].equals(data[2])){ //비밀 번호가 일치하면 query문 실행
+//   				  }else if(data[1].equals(data[2])){ //비밀 번호가 일치하면 query문 실행
 //    
 //   				String sql = "insert into mem02 values(?,?,?,?)";
 //      
 //   				try{
 //   					pstmt = con.prepareStatement(sql);
-//   					//          pstmt.setString(1,data[0]);  //아이디
-//   					//          pstmt.setString(2,data[1]);  //비밀번호
-//   					//          pstmt.setString(3,data[3]);  //이름
+//   					          pstmt.setString(1,data[0]);  //아이디
+//   					          pstmt.setString(2,data[1]);  //비밀번호
+//   					          pstmt.setString(3,data[3]);  //이름
 //    
 //   					pstmt.setString(1,fields[0].getText());  //아이디
 //   					pstmt.setString(2,fields[1].getText());  //비밀번호
@@ -220,5 +223,3 @@ public class LoginUI extends JFrame implements ActionListener{
 //   				values[ i ] = fields[ i ].getText();
 //   			return values;
 //   		}
-
-}
