@@ -18,8 +18,9 @@ public class LoginDAO extends DAO{
 	private Statement stmt;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	private List<LoginVO>list = new ArrayList<LoginVO>();
+	private List<LoginVO> list = new ArrayList<LoginVO>();
 	private LoginVO login = new LoginVO();
+	String aaa;
 	
 	private static LoginDAO instance = new LoginDAO();
 	public static LoginDAO getInstance() {
@@ -34,13 +35,15 @@ public class LoginDAO extends DAO{
 		public int insert(LoginVO o) {
 			int result = 0;
 			try {
-				pstmt = con.prepareStatement(login.insert());
-				pstmt.setString(1, login.getUserid());
-				pstmt.setString(2, login.getPassword());
-				pstmt.setString(3, login.getName());
-				pstmt.setString(4, login.getPhone());
-				pstmt.setString(5, login.getAddr());
-				pstmt.setString(6, login.getBirth());
+				pstmt = con.prepareStatement(o.insert());
+				pstmt.setString(1, o.getUserid());
+				pstmt.setString(2, o.getPassword());
+				pstmt.setString(3, o.getName());
+				pstmt.setString(4, o.getPhone());
+				pstmt.setString(5, o.getAddr());
+				pstmt.setString(6, o.getBirth());
+				pstmt.setString(7, o.getQue());
+				pstmt.setString(8, o.getAns());
 				result = pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -122,16 +125,16 @@ public class LoginDAO extends DAO{
 			return temp;
 			
 		}
-	
-		@Override // ---------- 아이디 찾기
-		public LoginVO searchById(String name, String birth, String findName, String findBirth) {
-			LoginVO result = new LoginVO();
 
+		public List<LoginVO> searchById(String name, String birth) {
+			List<LoginVO> list = new ArrayList<LoginVO>();
+			
 			try {
 				stmt = con.createStatement();
-				rs = stmt.executeQuery(login.selectByID(name, birth, findName, findBirth));
+				rs = stmt.executeQuery(login.selectByID(name, birth));
+				System.out.println("디버깅");
 				while (rs.next()) {
-
+					LoginVO result = new LoginVO();
 					result.setUserid(rs.getString("userid"));
 					result.setPassword(rs.getString("password"));
 					result.setName(rs.getString("name"));
@@ -140,22 +143,24 @@ public class LoginDAO extends DAO{
 					result.setBirth(rs.getString("birth"));
 					result.setQue(rs.getString("que"));
 					result.setAns(rs.getString("ans"));
+					list.add(result);
 
 					/* list.add(result); */
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-
-			return result;
+			System.out.println("디버깅");
+			return list;
 		}
-		@Override // -----------비밀번호 찾기   내일 해야함
-		public LoginVO searchByPass(String id, String que, String ans, String id2, String que2, String ans2) {
-			LoginVO result = new LoginVO();
+
+		public List<LoginVO> searchByPass(String id, String que, String ans) {
+			List<LoginVO> list = new ArrayList<LoginVO>();
 			try {
 				stmt = con.createStatement();
-				rs = stmt.executeQuery(login.selectByPass(id, que, ans, id2, que2, ans2));
+				rs = stmt.executeQuery(login.selectByPass(id, que, ans));
 				while (rs.next()) {
+					LoginVO result = new LoginVO();
 					result.setUserid(rs.getString("userid"));
 					result.setPassword(rs.getString("password"));
 					result.setName(rs.getString("name"));
@@ -164,13 +169,15 @@ public class LoginDAO extends DAO{
 					result.setBirth(rs.getString("birth"));
 					result.setQue(rs.getString("que"));
 					result.setAns(rs.getString("ans"));
+					list.add(result);
+
 				}
 
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 
-			return result;
+			return list;
 		}
 		@Override
 		public void selectOrderMember() {
@@ -184,26 +191,29 @@ public class LoginDAO extends DAO{
 		}
 		public boolean checkDupl(String id) {
 			// 저장되어 있는 아이디 값과 내가 입력한 아이디값을 비교,
+
 			boolean exist = false;
 			LoginVO temp = new LoginVO();
-			try {
+			try {	
 				stmt = con.createStatement();
 				rs = stmt.executeQuery(login.checkID(id));
-
+				
 				while (rs.next()) { // 있을 떄
-
-					if (rs.getString("userid") == null) {//?
-						exist = true;
+					if (rs.getString("userid") != null) {//?
+						exist = true;				
+					} else {
+						exist = false;
 					}
-					temp.setUserid(rs.getString("userid"));
+//					temp.setUserid(rs.getString("userid"));
 				}
-				System.out.println("실험"+temp.getUserid().equals(id));
-				if (temp.getUserid().equals(id)) {
-					exist = true;
-				} else if (!temp.getUserid().equals(id)) {
-					System.out.println("실험"+(!temp.getUserid().equals(id)));
-					exist = false;
-				}
+				System.out.println(exist);
+//				System.out.println("실험"+temp.getUserid().equals(id));
+//				if (temp.getUserid().equals(id)) {
+//					exist = true;
+//				} else if (!temp.getUserid().equals(id)) {
+//					System.out.println("실험"+(!temp.getUserid().equals(id)));
+//					exist = false;
+//				}
 
 			} catch (SQLException e) {
 				e.printStackTrace();

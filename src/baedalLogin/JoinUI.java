@@ -1,7 +1,6 @@
 package baedalLogin;
 
 import java.awt.BorderLayout;
-import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -10,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.sql.PreparedStatement;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -21,7 +19,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 
@@ -131,7 +128,7 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 	   combo.addItem("첫 학교");     
 	   combo.addItem("첫 사랑");     
 	   combo.addItem("태어난곳");     
-	   combo.addItem("첫친구");
+	   combo.addItem("첫 친구");
 	   combo.addItemListener(this);
 	   combo.setEditable(true);
 	   jpan.add(empty5);
@@ -151,6 +148,12 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 	   cn.addActionListener(this);
 	   this.setTitle("배달의 기수");
 	   this.setBounds(new Rectangle(600,400));
+	   Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	      Dimension frm = this.getSize();
+	      int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
+	      int ypos = (int)(screen.getHeight()/2-frm.getHeight()/2);
+	      this.setLocation(xpos,ypos);
+	      this.setResizable(false);
 	   this.setVisible(true);
 	   
 	   }
@@ -165,50 +168,72 @@ public class  JoinUI extends JFrame implements ActionListener, ItemListener{
 			}else if ((service.checkDupl(userIdt.getText()))) { // 이미 가입한 아이디랑 입력한 값이 다르다면 ' 그 값을 입력하지 않아도 가입이 가능하댄다'
 				JOptionPane.showMessageDialog(this, "이미 가입한 아이디 입니다.");
 			}else {
-				JOptionPane.showMessageDialog(this, "사용 [ 가능한 ]아이디 입니다.");
+				JOptionPane.showMessageDialog(this, "사용 가능한 아이디 입니다.");
 			}
 			break;
 		case "회원가입":
-			String id = userIdt.getText();
-			String pass = passwordt.getText();
-			String name = namet.getText();
-			String birth = birtht.getText();
-			String addr = addrt.getText();
-			String phone = phonet.getText();
-			String que = combo.getSelectedItem().toString(); //해야댐
-			String ans = answert.getText();
-			service.join(id, pass, name, phone, addr, birth,que, ans);
+			if (userIdt.getText().isEmpty()||passwordt.getText().isEmpty()||namet.getText().isEmpty()||
+					birtht.getText().isEmpty()||addrt.getText().isEmpty()||phonet.getText().isEmpty()||
+					combo.getSelectedItem().toString().isEmpty() ||answert.getText().isEmpty()) {
+				JOptionPane.showMessageDialog(this, "모든 정보를 입력하세요");
+//				this.dispose();   
+//				this.repaint();
+//				JoinUI ui = new JoinUI();
+			} else {
+				String id = userIdt.getText();
+				String pass = passwordt.getText();
+				String name = namet.getText();
+				String birth = birtht.getText();
+				String addr = addrt.getText();
+				String phone = phonet.getText();
+				String que = combo.getSelectedItem().toString(); //해야댐
+				System.out.println(que);
+				String ans = answert.getText();
+				service.join(id, pass, name, phone, addr, birth, que, ans);
+				
+				JOptionPane.showMessageDialog(this, name+" 님 가입을 축하드립니다");
+				this.dispose();  // 
+				this.repaint();
+				LoginUI ui = new LoginUI();
+			}
 			break;
 		case "취소":
 			this.dispose();  // 
 			this.repaint();
-			LoginUI ui = new LoginUI();
+			LoginUI ui2 = new LoginUI();
 			break;
 		default:
 			break;
 		}
 	}
+//	@Override
+//	public void itemStateChanged(ItemEvent e) {
+//		String qs = (String) combo.getSelectedItem();
+//		switch (qs) {
+//		case "첫 강아지":
+//			System.exit(0);
+//			break;
+//		case "첫 학교":
+//			System.exit(0);
+//			break;
+//		case "첫 사랑":
+//			System.exit(0);
+//			break;
+//		case "태어난곳":
+//			System.exit(0);
+//			break;
+//		case "첫친구":
+//			System.exit(0);
+//			break;
+//		default:
+//			break;
+//		}
+//	}
+
+
 	@Override
-	public void itemStateChanged(ItemEvent e) {
-		String qs = (String) combo.getSelectedItem();
-		switch (qs) {
-		case "첫 강아지":
-			System.exit(0);
-			break;
-		case "첫 학교":
-			System.exit(0);
-			break;
-		case "첫 사랑":
-			System.exit(0);
-			break;
-		case "태어난곳":
-			System.exit(0);
-			break;
-		case "첫친구":
-			System.exit(0);
-			break;
-		default:
-			break;
-		}
+	public void itemStateChanged(ItemEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	}

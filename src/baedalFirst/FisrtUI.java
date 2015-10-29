@@ -1,12 +1,19 @@
 package baedalFirst;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-import baedalLogin.*;
-import baedalStore.*;
+import baedalLogin.LoginVO;
+import baedalStore.StoreUI;
 
 public class FisrtUI extends JFrame implements ActionListener{
 	public static void main(String[] args) {
@@ -84,7 +91,10 @@ public class FisrtUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnHan)) {
-			vo.setTemp1(lo.getUserid());
+			
+			System.out.println(lo.getUserid()+"******");
+			
+			//vo.setTemp1(temp1);
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();

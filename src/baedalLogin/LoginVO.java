@@ -43,7 +43,8 @@ public class LoginVO implements Serializable, SQL{
 	
 
 	public String insert() {
-		String query = "insert into member " + "(userid, password, name , phone , addr ,birth,que,ans)" + "values(?,?,?,?,?,?,?,?)";
+		String query = "insert into member (userid, password, name , phone , addr ,birth, que, ans)" 
+					+ "values(?,?,?,?,?,?,?,?)";
 		return query;
 	}
 	
@@ -55,17 +56,18 @@ public class LoginVO implements Serializable, SQL{
 	}
 
 
-	public String selectByID(String name, String birth,String findName,String findBirth) {
-		String query = "select * from member where "
-				+ name +"="+ this.make(findName)+"and"+ birth +"="+ this.make(findBirth);
+	public String selectByID(String name, String birth) {
+		String query = "select * from member where name =" 
+				+this.make(name)+ "and birth=" +this.make(birth);
 		return query;
 	}
+// select userid from member where birth='19800101' and name='홍길동';
 
 	
 	
-	public String selectByPass(String userid, String que, String ans, String userid2, String que2, String ans2) {
-		String query = "select * from member where "
-				+userid+"="+this.make(userid2)+"and"+que+"="+this.make(que2)+"and"+ans+"="+this.make(ans2);
+	public String selectByPass(String userid, String que, String ans) {
+		String query = "select * from member where userid ="
+				+this.make(userid)+ "and que=" +this.make(que)+ "and ans=" +this.make(ans);
 		return query;  //내일 해야댐
 	}
 
@@ -184,6 +186,9 @@ public class LoginVO implements Serializable, SQL{
 		return "LoginVO [userid=" + userid + ", password=" + password + ", name=" + name + ", phone=" + phone
 				+ ", addr=" + addr + ", birth=" + birth + ", que=" + que + ", ans=" + ans + "]";
 	}
+
+
+
 
 
 

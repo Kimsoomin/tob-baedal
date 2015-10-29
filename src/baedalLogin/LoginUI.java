@@ -1,7 +1,7 @@
 package baedalLogin;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,19 +19,16 @@ import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.border.LineBorder;
 
-import baedalLogin.JoinUI;
-import baedalLogin.LoginUI;
-import baedalLogin.LoginVO;
-import baedalLogin.SearchUI;
+import baedalFirst.FisrtUI;
+import baedalOrder.OrderVO;
 public class LoginUI extends JFrame implements ActionListener{
    Connection con;
    PreparedStatement pstmt;
    Timestamp reg_date;
-
-   
+		public static void main(String[] args) {
+   			LoginUI ui = new LoginUI();
+   		}   
    LoginService service = LoginServiceImpl.getInstance();
    LoginVO vo = new LoginVO();
    
@@ -78,6 +76,12 @@ public class LoginUI extends JFrame implements ActionListener{
       join.addActionListener(this);
       search.addActionListener(this);
 	  this.setBounds(300,300,300,150);
+	  Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+      Dimension frm = this.getSize();
+      int xpos = (int) (screen.getWidth()/2-frm.getWidth()/2);
+      int ypos = (int)(screen.getHeight()/2-frm.getHeight()/2);
+      this.setLocation(xpos,ypos);
+      this.setResizable(false);
       this.setVisible(true);
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	  }
@@ -114,14 +118,18 @@ public class LoginUI extends JFrame implements ActionListener{
    			 System.out.println("UI에서 실행중 =================");
   		   if (fields[0].getText().isEmpty()||fields[1].getText().isEmpty()) {
   			   JOptionPane.showMessageDialog(this, "아이디 또는 비밀번호를 다시 입력해 주세요.");
+  			   break;
   		}else if (service.login(fields[0].getText(), fields[1].getText()).equals("로그인 실패")) {
-  			JOptionPane.showMessageDialog(this, "로그인 실패");	
+  			JOptionPane.showMessageDialog(this, "로그인 실패");
+  			break;
   		}else{
-  			service.login(fields[0].getText(), fields[1].getText());
-  		   	JOptionPane.showMessageDialog(this, "환영합니다.");	
+  			OrderVO vo = new OrderVO(fields[0].getText());//★
+  			
+ 		   	JOptionPane.showMessageDialog(this, "환영합니다.");	
   		   
   		   	this.dispose();
   		   	this.repaint();
+  		   	FisrtUI ui = new FisrtUI();
    				break;
   		}
 
@@ -156,64 +164,61 @@ public class LoginUI extends JFrame implements ActionListener{
    		}
    
    		//회원 가입 처리 부분
-   		public void insertMember(){
-   			Timestamp reg_date = new Timestamp(System.currentTimeMillis());
-   			String data[] = getFieldValues();
-   			// if(data[0].equals("") || data[1].equals("") || data[2].equals("") || data[3].equals("")){
-   			if(fields[0].getText().equals("") ||
-   					fields[1].getText().equals("") ||
-   					fields[2].getText().equals("") ||
-   					fields[3].getText().equals("") ){
-   				JOptionPane.showMessageDialog(this,"모든 정보를 입력 하세요!");
-   			}else if(fields[1].getText().equals(fields[2].getText())){
-   				//  }else if(data[1].equals(data[2])){ //비밀 번호가 일치하면 query문 실행
-    
-   				String sql = "insert into mem02 values(?,?,?,?)";
-      
-   				try{
-   					pstmt = con.prepareStatement(sql);
-   					//          pstmt.setString(1,data[0]);  //아이디
-   					//          pstmt.setString(2,data[1]);  //비밀번호
-   					//          pstmt.setString(3,data[3]);  //이름
-    
-   					pstmt.setString(1,fields[0].getText());  //아이디
-   					pstmt.setString(2,fields[1].getText());  //비밀번호
-   					pstmt.setString(3,fields[3].getText());  //이름
-          
-   					pstmt.setTimestamp(4, reg_date); //회원가입 날짜
-   					int result = pstmt.executeUpdate();    
-   					if(result == 1){
-   						JOptionPane.showMessageDialog(this,"회원 가입 완료");
-   						//     this.dispose();    
-   						// MemberManagement management= new MemberManagement();
-   					}else{
-   						JOptionPane.showMessageDialog(this,"회원 가입 실패");
-   					}
-    
-   				}catch(SQLException e){
-   					e.printStackTrace();
-   					System.out.println("새로운 레코드 추가에 실패");
-   				}
-   			}else{ //비밀 번호가 일치하지 않으면 메시지 박스
-   				JOptionPane.showMessageDialog(this,"비밀번호가 일치하지 않습니다.");
-   			}
-   		}  
-   
-   		// 다시 작성 처리 부분
-   		public void clearFields(){
-   			for( int i = 0; i < size; i++ ){
-   				fields[ i ].setText("");
-   			}
-   		}
-   		// 입력한 회원 정보값을 구하는 부분
-   		public String[] getFieldValues(){ 
-   			String values[] = new String[ size ];
-   			for ( int i = 0; i < size; i++ ) 
-   				values[ i ] = fields[ i ].getText();
-   			return values;
-   		}
-   		public static void main(String[] args) {
-   			LoginUI ui = new LoginUI();
-   		}   
+//   		public void insertMember(){
+//   			Timestamp reg_date = new Timestamp(System.currentTimeMillis());
+//   			String data[] = getFieldValues();
+//   			// if(data[0].equals("") || data[1].equals("") || data[2].equals("") || data[3].equals("")){
+//   			if(fields[0].getText().equals("") ||
+//   					fields[1].getText().equals("") ||
+//   					fields[2].getText().equals("") ||
+//   					fields[3].getText().equals("") ){
+//   				JOptionPane.showMessageDialog(this,"모든 정보를 입력 하세요!");
+//   			}else if(fields[1].getText().equals(fields[2].getText())){
+//   				//  }else if(data[1].equals(data[2])){ //비밀 번호가 일치하면 query문 실행
+//    
+//   				String sql = "insert into mem02 values(?,?,?,?)";
+//      
+//   				try{
+//   					pstmt = con.prepareStatement(sql);
+//   					//          pstmt.setString(1,data[0]);  //아이디
+//   					//          pstmt.setString(2,data[1]);  //비밀번호
+//   					//          pstmt.setString(3,data[3]);  //이름
+//    
+//   					pstmt.setString(1,fields[0].getText());  //아이디
+//   					pstmt.setString(2,fields[1].getText());  //비밀번호
+//   					pstmt.setString(3,fields[3].getText());  //이름
+//          
+//   					pstmt.setTimestamp(4, reg_date); //회원가입 날짜
+//   					int result = pstmt.executeUpdate();    
+//   					if(result == 1){
+//   						JOptionPane.showMessageDialog(this,"회원 가입 완료");
+//   						//     this.dispose();    
+//   						// MemberManagement management= new MemberManagement();
+//   					}else{
+//   						JOptionPane.showMessageDialog(this,"회원 가입 실패");
+//   					}
+//    
+//   				}catch(SQLException e){
+//   					e.printStackTrace();
+//   					System.out.println("새로운 레코드 추가에 실패");
+//   				}
+//   			}else{ //비밀 번호가 일치하지 않으면 메시지 박스
+//   				JOptionPane.showMessageDialog(this,"비밀번호가 일치하지 않습니다.");
+//   			}
+//   		}  
+//   
+//   		// 다시 작성 처리 부분
+//   		public void clearFields(){
+//   			for( int i = 0; i < size; i++ ){
+//   				fields[ i ].setText("");
+//   			}
+//   		}
+//   		// 입력한 회원 정보값을 구하는 부분
+//   		public String[] getFieldValues(){ 
+//   			String values[] = new String[ size ];
+//   			for ( int i = 0; i < size; i++ ) 
+//   				values[ i ] = fields[ i ].getText();
+//   			return values;
+//   		}
+
 }
-      

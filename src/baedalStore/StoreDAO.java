@@ -1,9 +1,9 @@
 package baedalStore;
 
 import java.beans.Statement;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
 
-import baedalOrder.OrderDAO;
 import global.Constants;
 import global.DAO;
 import global.DatabaseFactory;

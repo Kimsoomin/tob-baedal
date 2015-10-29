@@ -1,5 +1,7 @@
 package baedalLogin;
 
+import java.util.List;
+
 public class LoginServiceImpl implements LoginService{
 	LoginDAO dao = LoginDAO.getInstance();
 	
@@ -19,14 +21,13 @@ public class LoginServiceImpl implements LoginService{
 	}
 
 	@Override
-	public LoginVO searchById(String name, String birth,String findName,String findBirth) {
-		LoginVO vo = new LoginVO();
-		return  dao.searchById(name, birth,findName,findBirth);
+	public List<LoginVO> searchById(String name, String birth) {
+		System.out.println("디버깅");
+		return  dao.searchById(name, birth);
 	}
 
-	public LoginVO searchByPass(String id, String que, String ans, String id2, String que2, String ans2) {
-		LoginVO vo = new LoginVO();
-		return dao.searchByPass(id, que ,ans,id2,que2,ans2);
+	public List<LoginVO> searchByPass(String id, String que, String ans) {
+		return dao.searchByPass(id, que ,ans);
 	}
 
 	@Override

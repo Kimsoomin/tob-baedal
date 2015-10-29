@@ -1,15 +1,18 @@
 package baedalFirst;
 
-import java.util.List;
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
 
-import baedalLogin.LoginVO;
 import global.DAO;
 
 public class FirstDAO extends DAO{
-
+	
+	private Connection con;
+	private Statement stmt;
+	private ResultSet rs;
 	@Override
-	public void selectOrderMember() {
-		// TODO Auto-generated method stub
+	public void selectOrderMember() {  // 퍼스트에서 아이디값 접근.
 		
 	}
 	@Override

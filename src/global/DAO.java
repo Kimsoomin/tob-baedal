@@ -1,9 +1,6 @@
 package global;
 
-import java.util.List;
-
 import baedalLogin.LoginVO;
-import baedalMenu.MenuVO;
 
 public abstract class DAO {
 	public int insert (LoginVO o){return 0;}{}

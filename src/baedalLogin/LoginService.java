@@ -1,5 +1,7 @@
 package baedalLogin;
 
+import java.util.List;
+
 public interface LoginService {
 	//회원가입
 	
@@ -11,20 +13,20 @@ public interface LoginService {
 	
 	// 아이디 찾기
 	
-	public LoginVO searchById(String name, String birth,String findname,String findbirth);
+	public List<LoginVO> searchById(String name, String birth);
 	
 	
 	// 비밀번호 찾기
 	
-	public LoginVO searchByPass(String id, String que, String ans, String id2, String que2, String ans2);
+	public List<LoginVO> searchByPass(String id, String que, String ans);
 	
 	
 	// 중복 체크
 	public boolean checkDupl(String userid);
+
 	
 // 	비번 변경
 //	public String changePass(String id, String pass);
 
 	
 }
-
