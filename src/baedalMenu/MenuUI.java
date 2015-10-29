@@ -147,9 +147,7 @@ public class MenuUI extends JFrame implements ActionListener {
       if (temp.equals(btnget1)) {
         
          seq = service.getMenuSeq("떡볶이");
-         price=service.getPrice(seq);
-         //dao.selectOrderMenu("떡볶이");
-       
+         price=service.getPrice(seq); 
          this.dispose();
          this.repaint();
          OrderVO vo = new OrderVO(seq);
@@ -157,41 +155,44 @@ public class MenuUI extends JFrame implements ActionListener {
          
          
       } else if (temp.equals(btnget2)) {
-       
-         service.getMenuSeq("까르보나라 떡볶이");
+
          seq = service.getMenuSeq("까르보나라 떡볶이");
          price=service.getPrice(seq);
          this.dispose();
          this.repaint();
+         OrderVO vo = new OrderVO(seq);
          OrderUI ui = new OrderUI();
       } else if (temp.equals(btnget3)) {
-        
-         service.getMenuSeq("순대");
+
          seq = service.getMenuSeq("순대");
          price=service.getPrice(seq);
          this.dispose();
          this.repaint();
+         OrderVO vo = new OrderVO(seq);
          OrderUI ui = new OrderUI();
       }else if (temp.equals(btnget4)) {
         
-         service.getMenuSeq("돈까스");
-         price =service.getPrice(service.getMenuSeq("순대"));
+         seq = service.getMenuSeq("돈까스");
+         price =service.getPrice(seq);
          this.dispose();
          this.repaint();
+         OrderVO vo = new OrderVO(seq);
          OrderUI ui = new OrderUI();
       }else if (temp.equals(btnget5)) {
         
-         service.getMenuSeq("김치볶음밥");
-         price =service.getPrice(service.getMenuSeq("김치볶음밥"));
+         seq = service.getMenuSeq("김치볶음밥");
+         price =service.getPrice(seq);
          this.dispose();
          this.repaint();
+         OrderVO vo = new OrderVO(seq);
          OrderUI ui = new OrderUI();
       }else if (temp.equals(btnget6)) {
         
-         service.getMenuSeq("닭발");
-         price = service.getPrice(service.getMenuSeq("닭발"));
+         seq = service.getMenuSeq("닭발");
+         price = service.getPrice(seq);
          this.dispose();
          this.repaint();
+         OrderVO vo = new OrderVO(seq);
          OrderUI ui = new OrderUI();
       }else if (temp.equals(btnget7)) {
         
