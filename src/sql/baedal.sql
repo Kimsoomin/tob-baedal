@@ -21,6 +21,8 @@ name varchar2(20),
 phone varchar2(20),
 addr varchar2(50),
 birth varchar2(20),
+que varchar2(30),
+ans varchar2(30)
 constraint member_pk primary key (userid)
 );
 
