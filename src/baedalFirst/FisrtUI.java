@@ -17,9 +17,9 @@ import baedalLogin.LoginVO;
 import baedalStore.StoreUI;
 
 public class FisrtUI extends JFrame implements ActionListener{
-	public static void main(String[] args) {
-		FisrtUI ui = new FisrtUI();
-	}
+//	public static void main(String[] args) {
+//		FisrtUI ui = new FisrtUI();
+//	}
 
 	private static final long serialVersionUID = 1L;
 	Canvas canvas;

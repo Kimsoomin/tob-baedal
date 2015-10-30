@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -130,11 +131,13 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		switch (e.getActionCommand()) {
 		case "결제하기":
 			this.dispose();
-			FisrtUI ui = new FisrtUI();
+			JOptionPane.showMessageDialog(this,"주문이 완료 되었습니다.");
+			System.exit(0);
 			break;
-		case "휴대폰으로 결제하기":
+		case "<html>휴대폰으로<br/> 결제하기</html>":
 			this.dispose();
-			FisrtUI ui1 = new FisrtUI();
+			JOptionPane.showMessageDialog(this,"주문이 완료 되었습니다.");
+			System.exit(0);
 			break;
 		default:
 			break;
