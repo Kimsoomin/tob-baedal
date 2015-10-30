@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.net.URL;
 
 import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
@@ -26,25 +27,34 @@ public class StoreUI extends JFrame implements ActionListener {
 	protected JPanel jpSouth, jpNorth, jpTop;
 	private String id;
 	StoreVO vo = new StoreVO();
-
+	
 	public StoreUI() {
 		
 //		  ImageIcon[] temp = new ImageIcon[8]; for (int i = 1; i < 9; i++) {
 //		  temp[i]= new ImageIcon("src/한식종류/i.png"); }
 //		  id = service.getId(); 
-			
-		jpNorth = new JPanel();
-	
-		ImageIcon top1ButtonIcon = new ImageIcon("src/baedalStore/image/han/1.png");
-		ImageIcon top2ButtonIcon = new ImageIcon("src/baedalStore/image/han/2.png");
-		ImageIcon top3ButtonIcon = new ImageIcon("src/baedalStore/image/han/3.png");
-		ImageIcon top4ButtonIcon = new ImageIcon("src/baedalStore/image/han/4.png");
+//		URL imageBo = getClass().getClassLoader().getResource("image/category/Bo.gif");
+//		btnBo.setIcon(new ImageIcon(imageBo));			
+		
+		jpNorth = new JPanel();	
+		URL imageHan1 = getClass().getClassLoader().getResource("images/han1.png");
+		ImageIcon top1ButtonIcon = new ImageIcon(imageHan1);
+		URL imageHan2 = getClass().getClassLoader().getResource("images/han2.png");
+		ImageIcon top2ButtonIcon = new ImageIcon(imageHan2);
+		URL imageHan3 = getClass().getClassLoader().getResource("images/han3.png");
+		ImageIcon top3ButtonIcon = new ImageIcon(imageHan3);
+		URL imageHan4 = getClass().getClassLoader().getResource("images/han4.png");
+		ImageIcon top4ButtonIcon = new ImageIcon(imageHan4);
 
 		jpSouth = new JPanel();
-		ImageIcon bot5ButtonIcon = new ImageIcon("src/baedalStore/image/han/5.png");
-		ImageIcon bot6ButtonIcon = new ImageIcon("src/baedalStore/image/han/6.png");
-		ImageIcon bot7ButtonIcon = new ImageIcon("src/baedalStore/image/han/7.png");
-		ImageIcon bot8ButtonIcon = new ImageIcon("src/baedalStore/image/han/8.png");
+		URL imageHan5 = getClass().getClassLoader().getResource("images/han5.png");
+		ImageIcon bot5ButtonIcon = new ImageIcon(imageHan5);
+		URL imageHan6 = getClass().getClassLoader().getResource("images/han6.png");
+		ImageIcon bot6ButtonIcon = new ImageIcon(imageHan6);
+		URL imageHan7 = getClass().getClassLoader().getResource("images/han7.png");
+		ImageIcon bot7ButtonIcon = new ImageIcon(imageHan7);
+		URL imageHan8 = getClass().getClassLoader().getResource("images/han8.png");
+		ImageIcon bot8ButtonIcon = new ImageIcon(imageHan8);
 
 		
 		b1 = new JButton(top1ButtonIcon);

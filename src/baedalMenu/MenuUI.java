@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,14 +60,25 @@ public class MenuUI extends JFrame implements ActionListener {
       panelSouthImg = new JPanel();
       panelSouthBtn = new JPanel();
       
-      ImageIcon icon1 = new ImageIcon("src/baedalMenu/hansic/1.png");
-      ImageIcon icon2 = new ImageIcon("src/baedalMenu/hansic/2.png");
-      ImageIcon icon3 = new ImageIcon("src/baedalMenu/hansic/3.png");
-      ImageIcon icon4 = new ImageIcon("src/baedalMenu/hansic/4.png");
-      ImageIcon icon5 = new ImageIcon("src/baedalMenu/hansic/5.png");
-      ImageIcon icon6 = new ImageIcon("src/baedalMenu/hansic/6.png");
-      ImageIcon icon7 = new ImageIcon("src/baedalMenu/hansic/7.png");
-      ImageIcon icon8 = new ImageIcon("src/baedalMenu/hansic/8.png");
+//		URL imageHan1 = getClass().getClassLoader().getResource("image/han/1.png");
+//		ImageIcon top1ButtonIcon = new ImageIcon(imageHan1);
+      
+      URL imageGo1 = getClass().getClassLoader().getResource("images/gobongmin1.png");
+      ImageIcon icon1 = new ImageIcon(imageGo1);
+      URL imageGo2 = getClass().getClassLoader().getResource("images/gobongmin2.png");
+      ImageIcon icon2 = new ImageIcon(imageGo2);
+      URL imageGo3 = getClass().getClassLoader().getResource("images/gobongmin3.png");
+      ImageIcon icon3 = new ImageIcon(imageGo3);
+      URL imageGo4 = getClass().getClassLoader().getResource("images/gobongmin4.png");
+      ImageIcon icon4 = new ImageIcon(imageGo4);
+      URL imageGo5 = getClass().getClassLoader().getResource("images/gobongmin5.png");
+      ImageIcon icon5 = new ImageIcon(imageGo5);
+      URL imageGo6 = getClass().getClassLoader().getResource("images/gobongmin6.png");
+      ImageIcon icon6 = new ImageIcon(imageGo6);
+      URL imageGo7 = getClass().getClassLoader().getResource("images/gobongmin7.png");
+      ImageIcon icon7 = new ImageIcon(imageGo7);
+      URL imageGo8 = getClass().getClassLoader().getResource("images/gobongmin8.png");
+      ImageIcon icon8 = new ImageIcon(imageGo8);
    
       lblImg1 = new JLabel(icon1);
       lblImg2 = new JLabel(icon2);

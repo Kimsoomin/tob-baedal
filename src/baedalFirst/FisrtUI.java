@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -38,17 +39,24 @@ public class FisrtUI extends JFrame implements ActionListener{
 		panelCenter = new JPanel();
 		panelSouth = new JPanel();
 		btnHan = new JButton("한식");
-		btnHan.setIcon(new ImageIcon("src/image/Han.jpg"));
+		URL imageHan = getClass().getClassLoader().getResource("images/Han.jpg");
+		btnHan.setIcon(new ImageIcon(imageHan));
 		btnJoong = new JButton("중식");
-		btnJoong.setIcon(new ImageIcon("src/image/Joong.jpg"));
+		URL imageJoong = getClass().getClassLoader().getResource("images/Joong.jpg");
+		btnJoong.setIcon(new ImageIcon(imageJoong));
 		btnIl = new JButton("일식");
-		btnIl.setIcon(new ImageIcon("src/image/il.gif"));
+		URL imageIl = getClass().getClassLoader().getResource("images/il.gif");
+		btnIl.setIcon(new ImageIcon(imageIl));
 		btnChi = new JButton("치킨");
-		btnChi.setIcon(new ImageIcon("src/image/Chi.jpg"));
+		URL imageChi = getClass().getClassLoader().getResource("images/Chi.jpg");
+		btnChi.setIcon(new ImageIcon(imageChi));
 		btnPi = new JButton("피자");
-		btnPi.setIcon(new ImageIcon("src/image/Pi.jpg"));
+		URL imagePi = getClass().getClassLoader().getResource("images/Pi.jpg");
+		btnPi.setIcon(new ImageIcon(imagePi));
 		btnBo = new JButton("보쌈,족발");
-		btnBo.setIcon(new ImageIcon("src/image/Bo.gif"));
+		URL imageBo = getClass().getClassLoader().getResource("images/Bo.gif");
+		btnBo.setIcon(new ImageIcon(imageBo));
+		
 		btnHan.addActionListener(this);
 		btnJoong.addActionListener(this);
 		btnIl.addActionListener(this);
