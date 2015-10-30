@@ -99,35 +99,32 @@ public class FisrtUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		JButton temp = (JButton) e.getSource();
 		if (temp.equals(btnHan)) {
-			
-			System.out.println(lo.getUserid()+"******");
-			
-			//vo.setTemp1(temp1);
+
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		} else if (temp.equals(btnJoong)) {
-			vo.setTemp1(lo.getUserid());
+
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnIl)) {
-			vo.setTemp1(lo.getUserid());
+
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnChi)) {
-			vo.setTemp1(lo.getUserid());
+
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnPi)) {
-			vo.setTemp1(lo.getUserid());
+
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
 		}else if (temp.equals(btnBo)) {
-			vo.setTemp1(lo.getUserid());
+	
 			this.dispose();
 			this.repaint();
 		}

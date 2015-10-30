@@ -17,14 +17,12 @@ import javax.swing.JPanel;
 import baedalMenu.MenuUI;
 
 public class StoreUI extends JFrame implements ActionListener {
-//	public static void main(String[] args) {
-//		StoreUI ui = new StoreUI();
-//	}
-	
 		
 	private static final long serialVersionUID = 1L;
 	protected JButton b1, b2, b3, b4, b5, b6, b7, b8;
 	protected JPanel jpSouth, jpNorth, jpTop;
+	ImageIcon top1ButtonIcon, top2ButtonIcon, top3ButtonIcon, top4ButtonIcon, top5ButtonIcon
+	,top6ButtonIcon, top7ButtonIcon, top8ButtonIcon;
 	private String id;
 	StoreVO vo = new StoreVO();
 	
@@ -38,23 +36,23 @@ public class StoreUI extends JFrame implements ActionListener {
 		
 		jpNorth = new JPanel();	
 		URL imageHan1 = getClass().getClassLoader().getResource("images/han1.png");
-		ImageIcon top1ButtonIcon = new ImageIcon(imageHan1);
+		top1ButtonIcon = new ImageIcon(imageHan1);
 		URL imageHan2 = getClass().getClassLoader().getResource("images/han2.png");
-		ImageIcon top2ButtonIcon = new ImageIcon(imageHan2);
+		top2ButtonIcon = new ImageIcon(imageHan2);
 		URL imageHan3 = getClass().getClassLoader().getResource("images/han3.png");
-		ImageIcon top3ButtonIcon = new ImageIcon(imageHan3);
+		top3ButtonIcon = new ImageIcon(imageHan3);
 		URL imageHan4 = getClass().getClassLoader().getResource("images/han4.png");
-		ImageIcon top4ButtonIcon = new ImageIcon(imageHan4);
+		top4ButtonIcon = new ImageIcon(imageHan4);
 
 		jpSouth = new JPanel();
 		URL imageHan5 = getClass().getClassLoader().getResource("images/han5.png");
-		ImageIcon bot5ButtonIcon = new ImageIcon(imageHan5);
+		top5ButtonIcon = new ImageIcon(imageHan5);
 		URL imageHan6 = getClass().getClassLoader().getResource("images/han6.png");
-		ImageIcon bot6ButtonIcon = new ImageIcon(imageHan6);
+		top6ButtonIcon = new ImageIcon(imageHan6);
 		URL imageHan7 = getClass().getClassLoader().getResource("images/han7.png");
-		ImageIcon bot7ButtonIcon = new ImageIcon(imageHan7);
+		top7ButtonIcon = new ImageIcon(imageHan7);
 		URL imageHan8 = getClass().getClassLoader().getResource("images/han8.png");
-		ImageIcon bot8ButtonIcon = new ImageIcon(imageHan8);
+		top8ButtonIcon = new ImageIcon(imageHan8);
 
 		
 		b1 = new JButton(top1ButtonIcon);
@@ -89,28 +87,28 @@ public class StoreUI extends JFrame implements ActionListener {
 		b4.setActionCommand("able4");
 
 		/* FlowLayout fa = new FlowLayout(FlowLayout.RIGHT); */
-		b5 = new JButton(bot5ButtonIcon);
+		b5 = new JButton(top5ButtonIcon);
 		b5.setPreferredSize(new Dimension(300, 212));
 		b5.setVerticalTextPosition(AbstractButton.BOTTOM);
 		b5.setHorizontalTextPosition(AbstractButton.CENTER);
 		b5.setMnemonic(KeyEvent.VK_E);
 		b5.setActionCommand("able5");
 
-		b6 = new JButton(bot6ButtonIcon);
+		b6 = new JButton(top6ButtonIcon);
 		b6.setPreferredSize(new Dimension(300, 212));
 		b6.setVerticalTextPosition(AbstractButton.BOTTOM);
 		b6.setHorizontalTextPosition(AbstractButton.CENTER);
 		b6.setMnemonic(KeyEvent.VK_E);
 		b6.setActionCommand("able6");
 
-		b7 = new JButton(bot7ButtonIcon);
+		b7 = new JButton(top7ButtonIcon);
 		b7.setPreferredSize(new Dimension(300, 212));
 		b7.setVerticalTextPosition(AbstractButton.BOTTOM);
 		b7.setHorizontalTextPosition(AbstractButton.CENTER);
 		b7.setMnemonic(KeyEvent.VK_E);
 		b7.setActionCommand("able7");
 
-		b8 = new JButton(bot8ButtonIcon);
+		b8 = new JButton(top8ButtonIcon);
 		b8.setPreferredSize(new Dimension(300, 212));
 		b8.setVerticalTextPosition(AbstractButton.BOTTOM);
 		b8.setHorizontalTextPosition(AbstractButton.CENTER);
