@@ -2,6 +2,7 @@ package baedalOrder;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +11,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import baedalFirst.FisrtUI;
+import baedalLogin.LoginUI;
 
 public class OrderUI extends JFrame implements ActionListener, Runnable{
 
@@ -35,14 +39,14 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 	}
 
 	public void init(){
-		System.out.println("오더유아이넘겨옴");
+		/*System.out.println("오더유아이넘겨옴");
 		System.out.println("아이디");
 		System.out.println(OrderVO.getUserid());
 		System.out.println("시퀀스넘버");
 		System.out.println(OrderVO.getseq());
 
 		System.out.println("주문가격 : "+service.searchPrices(Integer.toString(OrderVO.getseq())));
-		System.out.println("주문음식 : "+service.searchMenu(Integer.toString(OrderVO.getSeq())));
+		System.out.println("주문음식 : "+service.searchMenu(Integer.toString(OrderVO.getSeq())));*/
 		
 		String[] temp = service.searchMember(OrderVO.getUserid());
 		for (int i = 0; i < temp.length; i++) {
@@ -62,14 +66,14 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		jp1 = new JPanel();
 		jp2 = new JPanel();
 		area = new JTextArea();
-		btnPay = new JButton("<html>결제하기<br/>테스트</html>");
-		btnPay.setPreferredSize(new Dimension(200, 50));
-		btnPhonePay = new JButton("휴대폰으로 결제하기");
-		btnPhonePay.setPreferredSize(new Dimension(200, 50));
-		btnList = new JButton("<html>"+service.searchPrices(Integer.toString(OrderVO.getseq()))+"<br/>"+service.searchMenu(Integer.toString(OrderVO.getSeq()))+"</html>" );
-		btnList.setPreferredSize(new Dimension(200, 300));
-		btnMember = new JButton("<html>"+temp[0]+"<br/>"+temp[1]+"<br/>"+temp[2]+"<br/>"+temp[3]);
-		btnMember.setPreferredSize(new Dimension(200, 400));
+		btnPay = new JButton("결제하기");
+		btnPay.setPreferredSize(new Dimension(190, 40));
+		btnPhonePay = new JButton("<html>휴대폰으로<br/> 결제하기</html>");
+		btnPhonePay.setPreferredSize(new Dimension(190, 100));
+		btnList = new JButton("<html>2. 주문목록<br/>"+service.searchMenu(Integer.toString(OrderVO.getSeq()))+"<br/>"+service.searchPrices(Integer.toString(OrderVO.getseq()))+"원</html>" );
+		btnList.setPreferredSize(new Dimension(190, 290));
+		btnMember = new JButton("<html>1. 배송정보<br/>"+"아이디 : "+temp[0]+"<br/>"+"이름 : "+temp[1]+"<br/>"+"폰번호 : "+temp[2]+"<br/>"+"주소 : "+temp[3]);
+		btnMember.setPreferredSize(new Dimension(190, 390));
 		jp333333333333 = new JPanel();
 		
 		//===============assembly()=====================
@@ -91,11 +95,17 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 		panelET.add(panelES, "South");
 		panelWT.add(btnMember);
 		panelWT.add(area);
+		btnPay.setFont(new Font("굴림체", Font.ROMAN_BASELINE, 27));
+		btnPhonePay.setFont(new Font("굴림체", Font.ROMAN_BASELINE, 27));
+		btnList.setFont(new Font("굴림체", Font.ROMAN_BASELINE, 20));
+		btnMember.setFont(new Font("굴림체", Font.ROMAN_BASELINE, 17));
 		
 		panelE.add(panelET);
 		panelW.add(panelWT);
 		this.getContentPane().add(panelE, "East");
 		this.getContentPane().add(panelW, "West");
+		btnPay.addActionListener(this);
+		btnPhonePay.addActionListener(this);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 400, 500); // 표시위치, 화면크기.
@@ -107,9 +117,7 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 	      this.setLocation(xpos,ypos);
 	      this.setResizable(false);
 	      this.setVisible(true);
-		
-		/*Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		Dimension frm = this.gi*/	
+			
 	}
 	
 	@Override
@@ -119,6 +127,17 @@ public class OrderUI extends JFrame implements ActionListener, Runnable{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub		
+		switch (e.getActionCommand()) {
+		case "결제하기":
+			this.dispose();
+			FisrtUI ui = new FisrtUI();
+			break;
+		case "휴대폰으로 결제하기":
+			this.dispose();
+			FisrtUI ui1 = new FisrtUI();
+			break;
+		default:
+			break;
+		}	
 	}
 }
