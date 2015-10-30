@@ -17,9 +17,6 @@ import baedalLogin.LoginVO;
 import baedalStore.StoreUI;
 
 public class FisrtUI extends JFrame implements ActionListener{
-//	public static void main(String[] args) {
-//		FisrtUI ui = new FisrtUI();
-//	}
 
 	private static final long serialVersionUID = 1L;
 	Canvas canvas;
@@ -97,40 +94,39 @@ public class FisrtUI extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton temp = (JButton) e.getSource();
-		if (temp.equals(btnHan)) {
-
+		switch (e.getActionCommand()) {
+		case "한식":
 			this.dispose();
 			this.repaint();
 			StoreUI ui = new StoreUI();
-		} else if (temp.equals(btnJoong)) {
-
+			break;
+		case "중식":
 			this.dispose();
 			this.repaint();
-			StoreUI ui = new StoreUI();
-		}else if (temp.equals(btnIl)) {
-
+			StoreUI ui2 = new StoreUI();
+			break;
+		case "일식":
 			this.dispose();
 			this.repaint();
-			StoreUI ui = new StoreUI();
-		}else if (temp.equals(btnChi)) {
-
+			StoreUI ui3 = new StoreUI();
+			break;
+		case "치킨":
 			this.dispose();
 			this.repaint();
-			StoreUI ui = new StoreUI();
-		}else if (temp.equals(btnPi)) {
-
+			StoreUI ui4 = new StoreUI();
+			break;
+		case "피자":
 			this.dispose();
 			this.repaint();
-			StoreUI ui = new StoreUI();
-		}else if (temp.equals(btnBo)) {
-	
+			StoreUI ui5 = new StoreUI();
+			break;
+		case "보쌈,족발":
 			this.dispose();
 			this.repaint();
-		}
-		
-	
-		
+			StoreUI ui6 = new StoreUI();
+		default:	
+			break;
+		}		
 	}
 
 }
